@@ -1,0 +1,105 @@
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\R}{\numberset{R}}
+
+\begin{document}
+
+\author{Stefano Pilosio}
+\title {Cose Utili per AM2}
+\maketitle
+
+\section{Integrali Indefiniti}
+
+\section{Sostituzioni utili integrali definiti}
+
+\section{Convergenza Integrali Impropri}
+\begin{equation*}
+    \begin{gathered}
+        %caso 1
+        \int_0^a{\frac{1}{x^\alpha}\text{d}x}
+        \begin{cases}
+            \alpha<1   \quad \text{converge}\\
+            \alpha\ge1 \quad \text{non converge}
+        \end{cases}
+        \\
+        a \in \mathbb{R} \setminus {0}
+        \\
+        \\
+        %caso 2
+        \int_a^\infty{\frac{1}{x^\alpha}\text{d}x}
+        \begin{cases}
+            \alpha>1   \quad \text{converge}\\
+            \alpha\le1 \quad \text{non converge}
+        \end{cases}
+        \\
+        a \in (0, \infty)
+        \\
+        \\
+        %caso 3
+        \int_0^a{\frac{1}{x^\alpha\log^{\beta} x}\text{d}x}
+        \begin{cases}
+            \alpha<1 \quad \forall\beta\quad \text{converge}\\
+            \alpha=1 \quad \beta>1     \quad \text{converge}\\
+            \alpha=1 \quad \beta\le1   \quad \text{non converge}\\
+            \alpha>1 \quad \forall\beta\quad \text{non converge}
+        \end{cases}
+        \\
+        a \in (0,1)
+        \\
+        \\
+        %caso 4
+        \int_a^\infty{\frac{1}{x^\alpha\log^{\beta} x}\text{d}x}
+        \begin{cases}
+            \alpha<1 \quad \forall\beta\quad \text{converge}\\
+            \alpha=1 \quad \beta>1     \quad \text{converge}\\
+            \alpha=1 \quad \beta\le1   \quad \text{non converge}\\
+            \alpha>1 \quad \forall\beta\quad \text{non converge}
+        \end{cases}
+        \\
+        a \in (1, \infty)
+        \\
+        \\
+        %caso 5
+        \int_1^a{\frac{1}{\log^{\beta} x}\text{d}x}
+        \begin{cases}
+            \beta<1   \quad \text{converge}\\
+            \beta\ge1 \quad \text{non converge}\\
+            \end{cases}
+        \\
+        a \in (0,1) \vee (1, \infty)
+        \\
+    \end{gathered}
+\end{equation*}
+\section{Approssimazioni}
+
+\section{Lista Metodi Eq. Differenziali}
+
+\section{Checklist Studi di Funzione}
+
+\section {Ricerca dei massimi e dei minimi}
+    \subsection{Condizioni Necessarie}
+        \newtheorem{nec}{Condizioni Necessarie Estremante Libero}
+        \begin{nec}    
+        $\\f\colon\Omega\subseteq\R\to\R$, $ x_0\in\Omega^o$, f derivabile in $x_0$.\\
+        Se $x_0$ è estremante di f $\implies \, \nabla f(x_0)=\bar{0}$ 
+        \end{nec}
+        Questo non basta in quanto un punto estremante in più dimensioni può essere sia un massimo, che un minimo o, infine, un punto di sella 
+
+        Nel caso del punto di sella questo non è né un minimo né un massimo, tuttavia è stazionario 
+
+\section{Successioni di funzioni}
+\begin{enumerate}
+    \item Capisci dove è definita la funzione da analizzare per comprendere la continuità della successione
+    \item Fai il $\lim_{n \to \infty} f_n(x)$ per capire qual è la funzione limite
+    \item Verifica che in tutti i punti si abbia convergenza puntuale alla funzione limite
+    \item Verifica la convergenza uniforme con: $\sup_{x\in E}|f_n(x)-f(x)|$, questo è eseguito cercando un modo per dimostrare o confutare che in ogni punto che $|f_n-f| \to 0$ in un modo o nell'altro. 
+\end{enumerate}
+
+\end{document}

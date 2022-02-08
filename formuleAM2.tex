@@ -4,10 +4,14 @@
 \usepackage[italian]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 
 \newcommand{\numberset}{\mathbb}
 \newcommand{\N}{\numberset{N}}
 \newcommand{\R}{\numberset{R}}
+
+\theoremstyle{plain}
+\newtheorem{Teo}{Teorema}
 
 \begin{document}
 
@@ -20,62 +24,63 @@
 \section{Sostituzioni utili integrali definiti}
 
 \section{Convergenza Integrali Impropri}
+
 \begin{equation*}
-    \begin{gathered}
-        %caso 1
-        \int_0^a{\frac{1}{x^\alpha}\text{d}x}
-        \begin{cases}
-            \alpha<1   \quad \text{converge}\\
-            \alpha\ge1 \quad \text{non converge}
+\begin{gathered}
+    %caso 1
+    \int_0^a{\frac{1}{x^\alpha}\text{d}x}
+    \begin{cases}
+        \alpha<1   \quad \text{converge}\\
+        \alpha\ge1 \quad \text{non converge}
+    \end{cases}
+    \\
+    a \in \mathbb{R} \setminus {0}
+    \\
+    \\
+    %caso 2
+    \int_a^\infty{\frac{1}{x^\alpha}\text{d}x}
+    \begin{cases}
+        \alpha>1   \quad \text{converge}\\
+        \alpha\le1 \quad \text{non converge}
+    \end{cases}
+    \\
+    a \in (0, \infty)
+    \\
+    \\
+    %caso 3
+    \int_0^a{\frac{1}{x^\alpha\log^{\beta} x}\text{d}x}
+    \begin{cases}
+        \alpha<1 \quad \forall\beta\quad \text{converge}\\
+        \alpha=1 \quad \beta>1     \quad \text{converge}\\
+        \alpha=1 \quad \beta\le1   \quad \text{non converge}\\
+        \alpha>1 \quad \forall\beta\quad \text{non converge}
+    \end{cases}
+    \\
+    a \in (0,1)
+    \\
+    \\
+    %caso 4
+    \int_a^\infty{\frac{1}{x^\alpha\log^{\beta} x}\text{d}x}
+    \begin{cases}
+        \alpha<1 \quad \forall\beta\quad \text{converge}\\
+        \alpha=1 \quad \beta>1     \quad \text{converge}\\
+        \alpha=1 \quad \beta\le1   \quad \text{non converge}\\
+        \alpha>1 \quad \forall\beta\quad \text{non converge}
+    \end{cases}
+    \\
+    a \in (1, \infty)
+    \\
+    \\
+    %caso 5
+    \int_1^a{\frac{1}{\log^{\beta} x}\text{d}x}
+    \begin{cases}
+        \beta<1   \quad \text{converge}\\
+        \beta\ge1 \quad \text{non converge}\\
         \end{cases}
-        \\
-        a \in \mathbb{R} \setminus {0}
-        \\
-        \\
-        %caso 2
-        \int_a^\infty{\frac{1}{x^\alpha}\text{d}x}
-        \begin{cases}
-            \alpha>1   \quad \text{converge}\\
-            \alpha\le1 \quad \text{non converge}
-        \end{cases}
-        \\
-        a \in (0, \infty)
-        \\
-        \\
-        %caso 3
-        \int_0^a{\frac{1}{x^\alpha\log^{\beta} x}\text{d}x}
-        \begin{cases}
-            \alpha<1 \quad \forall\beta\quad \text{converge}\\
-            \alpha=1 \quad \beta>1     \quad \text{converge}\\
-            \alpha=1 \quad \beta\le1   \quad \text{non converge}\\
-            \alpha>1 \quad \forall\beta\quad \text{non converge}
-        \end{cases}
-        \\
-        a \in (0,1)
-        \\
-        \\
-        %caso 4
-        \int_a^\infty{\frac{1}{x^\alpha\log^{\beta} x}\text{d}x}
-        \begin{cases}
-            \alpha<1 \quad \forall\beta\quad \text{converge}\\
-            \alpha=1 \quad \beta>1     \quad \text{converge}\\
-            \alpha=1 \quad \beta\le1   \quad \text{non converge}\\
-            \alpha>1 \quad \forall\beta\quad \text{non converge}
-        \end{cases}
-        \\
-        a \in (1, \infty)
-        \\
-        \\
-        %caso 5
-        \int_1^a{\frac{1}{\log^{\beta} x}\text{d}x}
-        \begin{cases}
-            \beta<1   \quad \text{converge}\\
-            \beta\ge1 \quad \text{non converge}\\
-            \end{cases}
-        \\
-        a \in (0,1) \vee (1, \infty)
-        \\
-    \end{gathered}
+    \\
+    a \in (0,1) \vee (1, \infty)
+    \\
+\end{gathered}
 \end{equation*}
 \section{Approssimazioni}
 
@@ -84,22 +89,88 @@
 \section{Checklist Studi di Funzione}
 
 \section {Ricerca dei massimi e dei minimi}
-    \subsection{Condizioni Necessarie}
-        \newtheorem{nec}{Condizioni Necessarie Estremante Libero}
-        \begin{nec}    
-        $\\f\colon\Omega\subseteq\R\to\R$, $ x_0\in\Omega^o$, f derivabile in $x_0$.\\
-        Se $x_0$ è estremante di f $\implies \, \nabla f(x_0)=\bar{0}$ 
-        \end{nec}
-        Questo non basta in quanto un punto estremante in più dimensioni può essere sia un massimo, che un minimo o, infine, un punto di sella 
 
-        Nel caso del punto di sella questo non è né un minimo né un massimo, tuttavia è stazionario 
+\subsection{Condizioni Necessarie}
+
+\begin{Teo}[Condizioni Necessarie Estremante Libero]    
+    $\\f\colon\Omega\subseteq\R\to\R$, $ x_0\in\Omega^o$, f derivabile in $x_0$.\\
+    Se $x_0$ è estremante di f $\implies \, \nabla f(x_0)=\bar{0}$ 
+\end{Teo}
+
+Questo non basta in quanto un punto estremante in più dimensioni può essere sia 
+un massimo, che un minimo o, infine, un punto di sella 
+
+Nel caso del punto di sella questo non è né un minimo né un massimo, tuttavia è stazionario 
 
 \section{Successioni di funzioni}
+
+\subsection{Dominio della funzione e convergenze}
+
 \begin{enumerate}
-    \item Capisci dove è definita la funzione da analizzare per comprendere la continuità della successione
+    \item Capisci dove è definita la funzione da analizzare per comprendere 
+    la continuità della successione
     \item Fai il $\lim_{n \to \infty} f_n(x)$ per capire qual è la funzione limite
     \item Verifica che in tutti i punti si abbia convergenza puntuale alla funzione limite
-    \item Verifica la convergenza uniforme con: $\sup_{x\in E}|f_n(x)-f(x)|$, questo è eseguito cercando un modo per dimostrare o confutare che in ogni punto che $|f_n-f| \to 0$ in un modo o nell'altro. 
+    \item Verifica la convergenza uniforme con: $\sup_{x\in E}|f_n(x)-f(x)|$,
+    questo è eseguito cercando un modo per dimostrare o confutare che in ogni punto che $|f_n-f|
+    \to 0$ in un modo o nell'altro. 
 \end{enumerate}
 
+\subsection{Continuità}
+
+\begin{Teo} [Condizioni per la continuità] 
+    Se ogni $f_n$ è continua e la successione è convergente uniformemente $\implies$ $f$ è continua 
+    in $x_0$, in particolare se $f_n$ è continua su E, $f$ è continua in E.\\
+    \textbf{OSSERVAZIONE} : se $f_n$ è continua uniforme in E e ha la convergenza uniforme in E
+    $\implies$ $f$ è continua uniforme. 
+\end{Teo}
+
+\subsection{Differenziabilità}
+
+\begin{Teo}[Condizioni per la derivata]
+    Sia $J\subseteq\R$, intervallo, $\{f_n\}_{n\in\N}$ la successione di funzioni.
+    Se sono verificate le seguenti condizioni:
+    \begin{itemize}
+        \item $\{f_n\}_{n\in\N}$ converge puntualmente in $J$ alla funzione limite $f$.
+        \item Ogni $f_n$ è derivabile in ogni punto di $J$.
+        \item $\{f'_n\}_{n\in\N}$ converge uniformemente su ogni intervallo limitato $I\subseteq J$
+    \end{itemize}
+    $\implies$ f è derivabile su J e $\forall x \in J$ si ha 
+    \begin{equation*} 
+        f'(x)=\lim_{n\to\infty}{f'_n(x)}
+    \end{equation*} 
+
+\end{Teo}
+
+\section {Serie di Funzioni}
+
+\subsection{Dominio della funzione e convergenze}
+
+\begin{enumerate}
+    \item Comprendi dove $f_n$ è definita anche secondo le condizioni del problema,
+    se anche una sola delle funzioni non esiste allora non può esistere la serie in quel punto.
+    \item Studia la convergenza della serie come in analisi 1, questa convergenza è solo puntuale.
+    \item Per la convergenza uniforme studia $sup_{x\in E}{|f_n(x)|}$. Se questo ha un massimo
+    che non tende a zero all'aumentare di n allora non si ha convergenza uniforme.
+\end{enumerate}
+
+\textbf{OSSERVAZIONE}: In caso l'ultimo punto fallisse, c'è un ulteriore metodo, che sfrutta il criterio
+di Weierstrass, che prevede di maggiorare $|f_n|$ con una successione numerica $M_n$ convergente, questo garantisce 
+convergenza più forte.
+
+\subsection{Conseguenze convergenza uniforme}
+\begin{Teo}{Proprietà della convergenza uniforme}
+    Se ho una serie di funzioni convergente su $E\subseteq\R$ alla funzione somma $S$, 
+    ho le seguenti proprietà:
+    \begin{itemize}
+        \item Se ogni $f_n$ è limitata su E $\implies S$ è limitata su $E$.
+        \item Se ogni $f_n$ è continua in $x_0\in E\implies S$ è continua in $x_0$.
+        \item Se ogni $f_n$ è continua su E $\implies S$ è limitata su $E$.
+        \item Se ogni $f_n$ è uniformemente continua in E $\implies S$ è uniformemente continua su $E$.
+    \end{itemize}
+\end{Teo}
+\begin{Teo}{Integrale e Sommatoria}
+    Se $f_n$ è continua in [a,b] e la sua serie converge uniformemente sull'intervallo a S.
+    $$\implies \int_a^b{S }=\int_a^b{\sum_{n=0}^\infty{f_n(x)}dx}=\sum_{n=0}^\infty{\int_a^b{f_n(x)dx}}$$
+\end{Teo}
 \end{document}

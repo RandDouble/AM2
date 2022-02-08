@@ -173,4 +173,52 @@ convergenza più forte.
     Se $f_n$ è continua in [a,b] e la sua serie converge uniformemente sull'intervallo a S.
     $$\implies \int_a^b{S }=\int_a^b{\sum_{n=0}^\infty{f_n(x)}dx}=\sum_{n=0}^\infty{\int_a^b{f_n(x)dx}}$$
 \end{Teo}
+
+\section {Equazioni differenziali di primo ordine}
+\subsection{Esistenza e Unicità}
+\begin{Teo}[Locale]
+    
+\end{Teo}
+\begin{Teo}[globale]
+    
+\end{Teo}
+
+\subsection{a Variabili Separabili}
+
+Equazione della forma:
+\begin{equation*}
+    y'=h(x)\cdot k(y)
+\end{equation*}
+Soluzione:
+\begin{gather*}
+    \int_{x_0}^x{\frac{y'(x)}{k(y(x))}\text{d}x}=\int_{x_0}^{x}{h(x)\text{d}x}\\
+    \text{sostituisco}\quad u=y(x),\, du=y'(x)dx\\
+    \int_{y_0}^y{\frac{\text{d}u}{k(u)}}=\int_{x_0}^{x}{h(x)\text{d}x}
+\end{gather*}
+
+\subsection{Lineari del primo ordine}
+
+Equazione della forma:
+\begin{equation*}
+    y'+p(x)y=q(x),\quad p,q\colon J\to\R,\,J\subseteq\R,\, p,q\text{ continue in }J
+\end{equation*}
+Soluzione:
+\begin{gather*}
+    y(x)=\exp \left( -\int_{x_0}^x{p(t)\text{d}t} \right) \cdot
+    \left\{ y_0+\int_{x_0}^{x}{q(r)\exp \left(\int_{x_0}^r{p(t)\text{d}t}\right) \text{d}r} \right\}
+\end{gather*}
+
+\subsection{Omogenee}
+
+Equazione della forma:
+\begin{equation*}
+    y'=g\left(\frac{y}{x}\right)    
+\end{equation*}
+Soluzione: 
+\begin{gather*}
+    \text{Sostituisco }t=\frac{y}{x}\\
+    \implies y=x\cdot t(x),\,y'(x)=t(x)+x\cdot t'(x)\\
+    \implies t(x)+x\cdot t'(x)=g(t(x)),\,\text{si risolve con le variabili separabili}
+\end{gather*}
+
 \end{document}

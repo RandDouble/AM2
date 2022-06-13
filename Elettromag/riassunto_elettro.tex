@@ -1,0 +1,54 @@
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{physics}
+
+\begin{document}
+    
+\section{Equazioni di Maxwell generali}
+
+\subsection{Forma Locale}
+\begin{gather}
+    \div{\va D} = \rho\\
+    \div{\va B} = 0\\
+    \curl{\va E}= -\pdv{\va B}{t}\\ 
+    \curl{\va H}= \va J +  \pdv{\va D}{t}
+\end{gather}
+
+\subsection{Forma Globale}
+
+\begin{gather}
+    \oint_S \va D \cdot  \,dS= Q\\
+    \oint_S \va B \cdot \,dS= 0\\
+    \oint_\gamma \va E \cdot \,dl = -\dv{t}\int_S \va B \cdot \,dS\\
+    \oint_\gamma \va H \cdot \,dl = \int_S \va J \cdot \,dS + \dv{t}\int_S \va D \cdot \,dS\\
+\end{gather}
+
+\section{Relazioni tra i vari campi}
+
+\subsection{Campi}
+
+\begin{gather}
+    \va D = \epsilon_0 \va E + \va P\\
+    \va P = \chi\epsilon_0 \va E \\
+    \va D = \epsilon_0 \epsilon_r \va E \quad \text{Nei materiali isotropi omogenei}\\
+    \va H = \va B/\mu_0 - \va M
+\end{gather}
+
+\subsection{Relazione campi con sorgenti}
+\begin{align}
+    \div {\va P} & = - \rho_{bounded}\\
+    \va P \cdot  \vu n &= \sigma_{bounded}\\
+    \div {\va D} &= \rho_{free}\\
+    \va D \cdot  \vu n &= \sigma_{free}\\
+    \curl {\va M} &= \va {J_{Amp, V}}\\
+    \va M \cross \vu n &= \va {J_{Amp, S}}
+\end{align}
+\subsection{Potenziali}
+\begin{gather}
+    \va B = \curl{A} \\
+    \curl{E} = -\dv{t}\curl{A}\\
+    -\grad{V} = \va E + \pdv{A}{t}
+\end{gather}
+
+\end{document}

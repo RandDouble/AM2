@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "Metodi"
+		},
+		{
+			"path": "Elettromag"
+		},
+		{
+			"path": "Termodinamica"
+		},
+		{
+			"path": "FisicaQuantistica"
+		},
+		{
+			"path": "esterni"
+		}
+	],
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"James-Yu.latex-workshop",
+			"DavidAnson.vscode-markdownlint",
+			"bierner.markdown-checkbox"
+		]
+	}
+}

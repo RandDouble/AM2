@@ -1,28 +1,27 @@
 \documentclass[a4paper]{article}
 
 \usepackage{amsmath, amsthm, amsfonts}
+\usepackage{array}
 \usepackage{physics}
+\usepackage{rotating}
+\usepackage{booktabs}
 
 \begin{document}
     
 \section{Equazioni di Maxwell generali}
 
-\subsection{Forma Locale}
-\begin{gather}
-    \div{\va D} = \rho\\
-    \div{\va B} = 0\\
-    \curl{\va E}= -\pdv{\va B}{t}\\ 
-    \curl{\va H}= \va J +  \pdv{\va D}{t}
-\end{gather}
-
-\subsection{Forma Globale}
-
-\begin{gather}
-    \oint_S \va D \cdot  \,dS= Q\\
-    \oint_S \va B \cdot \,dS= 0\\
-    \oint_\gamma \va E \cdot \,dl = -\dv{t}\int_S \va B \cdot \,dS\\
-    \oint_\gamma \va H \cdot \,dl = \int_S \va J \cdot \,dS + \dv{t}\int_S \va D \cdot \,dS\\
-\end{gather}
+\[
+\begin{array}{ll}
+    \toprule
+    \text{Forma Locale} & \text {forma Globale} \\
+    \midrule
+    \div{\va D} = \rho_{free}             & \varPhi(D)   = \oint_S \va D \cdot \, d\Sigma= Q_{free}\\
+    \div{\va B} = 0                       & \varPhi(B)   = \oint_S \va B \cdot \, d\Sigma= 0\\
+    \curl{\va E}= -\pdv{\va B}{t}         & \varGamma(E) = \oint_\gamma \va E \cdot \,dl = -\dv{\varPhi(\va B)}{t}\\
+    \curl{\va H}= \va J +  \pdv{\va D}{t} & \varGamma(H) = \oint_\gamma \va H \cdot \,dl = \int_S \va J \cdot \,dS + \dv{\varPhi(\va D)}{t}\\
+    \bottomrule
+\end{array}    
+\]
 
 \section{Relazioni tra i vari campi}
 
@@ -31,7 +30,7 @@
 \begin{gather}
     \va D = \epsilon_0 \va E + \va P\\
     \va P = \chi\epsilon_0 \va E \\
-    \va D = \epsilon_0 \epsilon_r \va E \quad \text{Nei materiali isotropi omogenei}\\
+    \va D = \epsilon_0 \epsilon_r \va E \quad \text{Nei materiali isotropi, omogenei e lineari}\\
     \va H = \va B/\mu_0 - \va M
 \end{gather}
 
@@ -51,4 +50,106 @@
     -\grad{V} = \va E + \pdv{A}{t}
 \end{gather}
 
+\subsection{Onde}
+
+\begin{align}
+    \va S & = \frac{\vec E \cross \vec B}{\mu_0 \mu_r}\\
+    I & = <S> = \frac{1}{2}\epsilon v E^2_0
+\end{align}
+
+\pagebreak
+
+\begin{sidewaystable}
+\caption{Formule differenziali necessarie per esame}
+    \[
+\begin{array}{cccc}
+    \toprule
+    \text{nome} & \text{Cartesiane} & \text{Cilindriche} & \text{Sferiche}\\
+\midrule
+\displaystyle \grad{f} & 
+    \displaystyle \pdv{f}{x} \va x + \pdv{f}{y} \va y + \pdv{f}{z} \va z &
+    \displaystyle \pdv{f}{\rho}\va \rho + \frac{1}{\rho}\pdv{f}{\phi}\va \phi + \pdv{f}{z} \va z &
+    \displaystyle \pdv{f}{r} \va r + \frac{1}{r} \pdv{f}{\theta} \va \theta + \frac{1}{r\sin{\theta}} \pdv{f}{\phi} \va \phi\\ 
+\midrule
+\displaystyle \div{\vec{F}} &
+    \displaystyle \pdv{f}{x} + \pdv{f}{y} + \pdv{f}{z} &
+    \displaystyle \frac{1}{\rho}\pdv { \rho A_\rho } { \rho}
+    + \frac{1} {\rho}\pdv {A_\phi} {\phi}
+    + \pdv{ A_z} {z}&
+    \displaystyle \frac{1}{r^2} \pdv{r^2 F_r}{r} + \frac{1}{r \sin \theta} \pdv{F_{\theta} \sin \theta}{\theta} + {1\over r \sin \theta}\pdv{F_{\phi}}{\phi}\\ 
+\midrule
+\displaystyle \curl{\vec{F}} & 
+\begin{matrix}
+    \displaystyle \bigg(\pdv{F_z}{y} - \pdv{F_y}{z} \bigg) \boldsymbol{\hat x}\\
+    \displaystyle \bigg(\pdv{F_x}{z} - \pdv{F_z}{x}\bigg) \boldsymbol{\hat y}\\
+    \displaystyle \bigg(\pdv{F_y}{x} - \pdv{F_x}{y}\bigg) \boldsymbol{\hat z}
+\end{matrix} & 
+\begin{matrix}
+    \displaystyle \bigg ({1 \over \rho}{\partial A_z \over \partial \phi}
+    - {\partial A_\phi \over \partial z} \bigg ) \boldsymbol{\hat \rho}  \\
+    \displaystyle \bigg ({\partial A_\rho \over \partial z} - {\partial A_z \over \partial \rho} \bigg) \boldsymbol{\hat \phi} \\
+    \displaystyle{1 \over \rho}\bigg ({\partial ( \rho A_\phi ) \over \partial \rho}
+    - {\partial A_\rho \over \partial \phi} \bigg ) \boldsymbol{\hat z}
+\end{matrix} &
+\begin{matrix}
+    \displaystyle{1 \over r\sin\theta} \bigg ({\partial \over \partial \theta} ( A_\phi\sin\theta )
+    - {\partial A_\theta \over \partial \phi} \bigg ) \boldsymbol{\hat r} \\
+    \displaystyle{1 \over r} \bigg ({1 \over \sin\theta}{\partial A_r \over \partial \phi}
+    - {\partial \over \partial r} ( r A_\phi ) \bigg ) \boldsymbol{\hat \theta}\\
+    \displaystyle{1 \over r}\bigg ({\partial \over \partial r} ( r A_\theta )
+    - {\partial A_r \over \partial \theta} \bigg) \boldsymbol{\hat \phi}
+\end{matrix}
+\\
+\nabla^2 f &
+{\partial^2 f \over \partial x^2} + {\partial^2 f \over \partial y^2} + {\partial^2 f \over \partial z^2}
+&{1 \over \rho}{\partial \over \partial \rho} \bigg (\rho {\partial f \over \partial \rho} \bigg )
++ {1 \over \rho^2}{\partial^2 f \over \partial \phi^2}
++ {\partial^2 f \over \partial z^2}
+&{1 \over r^2}{\partial \over \partial r} \bigg (r^2 {\partial f \over \partial r} \bigg)
++ {1 \over r^2\sin\theta}{\partial \over \partial \theta} \bigg(\sin\theta {\partial f \over \partial \theta} \bigg)
++ {1 \over r^2\sin^2\theta}{\partial^2 f \over \partial \phi^2}\\
+\nabla^2 \mathbf{A} & \nabla^2 A_x \mathbf{\hat x} + \nabla^2 A_y \mathbf{\hat y} + \nabla^2 A_z \mathbf{\hat z} & 
+\begin{matrix}
+    \displaystyle \bigg (\nabla^2 A_\rho - {A_\rho \over \rho^2}
+    - {2 \over \rho^2}{\partial A_\phi \over \partial \phi} \bigg) \boldsymbol{\hat\rho}\\
+    \displaystyle \bigg (\nabla^2 A_\phi - {A_\phi \over \rho^2}
+    + {2 \over \rho^2}{\partial A_\rho \over \partial \phi} \bigg ) \boldsymbol{\hat\phi}\\
+    \displaystyle (\nabla^2 A_z ) \boldsymbol{\hat z}
+\end{matrix} & 
+\begin{matrix}
+    \bigg (\nabla^2 A_r - {2 A_r \over r^2}
+    - {2 \over r^2\sin\theta}{\partial (A_\theta \sin\theta) \over \partial\theta}
+    - {2 \over r^2\sin\theta}{\partial A_\phi \over \partial \phi} \bigg ) \boldsymbol{\hat r}\\
+    \bigg (\nabla^2 A_\theta - {A_\theta \over r^2\sin^2\theta}
+    + {2 \over r^2}{\partial A_r \over \partial \theta}
+    - {2 \cos\theta \over r^2\sin^2\theta}{\partial A_\phi \over \partial \phi} \bigg ) \boldsymbol{\hat\theta}\\
+    \bigg (\nabla^2 A_\phi - {A_\phi \over r^2\sin^2\theta}
+    + {2 \over r^2\sin\theta}{\partial A_r \over \partial \phi}
+    + {2 \cos\theta \over r^2\sin^2\theta}{\partial A_\theta \over \partial \phi} \bigg ) \boldsymbol{\hat\phi} & 
+\end{matrix}
+\\ \bottomrule
+\end{array}
+\]
+\end{sidewaystable}
+
+
+\section {Relazioni notevoli (valgono in tutti i sistemi di riferimento)}
+\begin{gather}
+\div  \grad f = \nabla \cdot (\nabla f) = \nabla^2 f \quad\text{Operatore di Laplace o Laplaciano}\\
+\curl \grad f = \nabla \times (\nabla f) = 0\\
+\div  \curl \mathbf{F} = \nabla \cdot (\nabla \times \mathbf{F}) = 0\\
+\curl \curl \mathbf{F} = \nabla \times (\nabla \times \mathbf{F}) = \nabla (\nabla \cdot \mathbf{F}) - \nabla^2 \mathbf{F}\\
+\nabla^2 f g = f \nabla^2 g + 2 \nabla f \cdot \nabla g + g \nabla^2 f
+\end{gather}
+Formula di Lagrange per il prodotto vettoriale: 
+\begin{gather}
+\mathbf{A} \times (\mathbf{B} \times \mathbf{C}) = \mathbf{B} (\mathbf{A} \cdot \mathbf{C}) - \mathbf{C} (\mathbf{A} \cdot \mathbf{B})\\
+\nabla\cdot(f \mathbf A)=f \nabla\cdot\mathbf A+\mathbf A\cdot\nabla f\\
+\nabla\times f \mathbf A= f \nabla\times \mathbf A-\mathbf A\times \nabla f\\
+\nabla ( \mathbf{A} \cdot \mathbf{B} ) 
+  = ( \mathbf{A} \cdot \nabla ) \mathbf{B}
+  + ( \mathbf{B} \cdot \nabla ) \mathbf{A}
+  + \mathbf{A} \times ( \nabla \times \mathbf{B} )
+  + \mathbf{B} \times ( \nabla \times \mathbf{A} )
+\end{gather}
 \end{document}

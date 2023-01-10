@@ -1,0 +1,13 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\vspace {-\cftbeforepartskip }
+\contentsline {chapter}{\numberline {1}{Particella Libera}}{3}{chapter.1}%
+\contentsline {subsection}{\numberline {1.0.1}{Hamiltoniana}}{3}{subsection.1.0.1}%
+\contentsline {chapter}{\numberline {2}{Barriera di Potenziale}}{4}{chapter.2}%
+\contentsline {subsection}{\numberline {2.0.1}{Hamiltoniana}}{4}{subsection.2.0.1}%
+\contentsline {chapter}{\numberline {3}{Stati Legati}}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}{Buca di Potenziale}}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}{Hamiltoniana}}{5}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}{Potenziale Armonico}}{5}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}{Hamiltoniana}}{5}{subsection.3.2.1}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

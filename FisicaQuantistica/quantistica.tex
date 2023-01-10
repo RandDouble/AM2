@@ -1,0 +1,74 @@
+\documentclass[a4paper]{scrreport}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+\usepackage[parts, pdfspacing]{classicthesis}
+
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{array}
+\usepackage{physics}
+\usepackage{rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\author{Stefano Pilosio}
+\title{Appunti di quantistica}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Particella Libera}
+
+\subsection{Hamiltoniana}
+
+L'hamiltoniana che descrive il sistema è:
+
+\begin{equation}
+    H = \frac{ p^ 2}{2m}
+\end{equation}
+
+\chapter{Barriera di Potenziale}
+
+\subsection{Hamiltoniana}
+
+\begin{align}
+    H    & = \frac{ p^ 2}{2m} + V(x)\\
+    V(x) & = 
+    \begin{cases}
+    0   & x < 0\\
+    V_0 & x \ge 0   
+    \end{cases}
+\end{align}
+
+\chapter{Stati Legati}
+
+\section{Buca di Potenziale}
+
+\subsection{Hamiltoniana}
+
+L'hamiltoniana che descrive il sistema è:
+\begin{align}
+    H  &= \frac{p^ 2}{2m} + V(x)\\
+    V(x) &=
+    \begin{cases}
+        0 & |x|< a_0\\
+        V_0 & |x|\ge a_0
+    \end{cases}
+\end{align}
+
+\section{Potenziale Armonico}
+
+\subsection{Hamiltoniana}
+
+L'hamiltoniana che descrive il sistema è:
+\begin{equation}
+    H = \frac{ p^ 2}{2m} + \frac{m\omega ^ 2 x ^ 2}{2}
+\end{equation}
+
+
+\end{document}

@@ -1,4 +1,8 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{scrarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
 
 \usepackage{amsmath, amsthm, amsfonts}
 \usepackage{array}
@@ -15,10 +19,10 @@
     \toprule
     \text{Forma Locale} & \text {forma Globale} \\
     \midrule
-    \div{\va D} = \rho_{free}             & \varPhi(D)   = \oint_S \va D \cdot \, d\Sigma= Q_{free}\\
-    \div{\va B} = 0                       & \varPhi(B)   = \oint_S \va B \cdot \, d\Sigma= 0\\
-    \curl{\va E}= -\pdv{\va B}{t}         & \varGamma(E) = \oint_\gamma \va E \cdot \,dl = -\dv{\varPhi(\va B)}{t}\\
-    \curl{\va H}= \va J +  \pdv{\va D}{t} & \varGamma(H) = \oint_\gamma \va H \cdot \,dl = \int_S \va J \cdot \,dS + \dv{\varPhi(\va D)}{t}\\
+    \displaystyle \div{\va D} = \rho_{free}             & \displaystyle \varPhi(D)   = \oint_S \va D \cdot \, d\Sigma= Q_{free}\\
+    \displaystyle \div{\va B} = 0                       & \displaystyle \varPhi(B)   = \oint_S \va B \cdot \, d\Sigma= 0\\
+    \displaystyle \curl{\va E}= -\pdv{\va B}{t}         & \displaystyle \varGamma(E) = \oint_\gamma \va E \cdot \,dl = -\dv{\varPhi(\va B)}{t}\\
+    \displaystyle \curl{\va H}= \va J +  \pdv{\va D}{t} & \displaystyle \varGamma(H) = \oint_\gamma \va H \cdot \,dl = \int_S \va J \cdot \,dS + \dv{\varPhi(\va D)}{t}\\
     \bottomrule
 \end{array}    
 \]
@@ -35,26 +39,63 @@
 \end{gather}
 
 \subsection{Relazione campi con sorgenti}
-\begin{align}
-    \div {\va P} & = - \rho_{bounded}\\
-    \va P \cdot  \vu n &= \sigma_{bounded}\\
-    \div {\va D} &= \rho_{free}\\
-    \va D \cdot  \vu n &= \sigma_{free}\\
-    \curl {\va M} &= \va {J_{Amp, V}}\\
-    \va M \cross \vu n &= \va {J_{Amp, S}}
-\end{align}
+\[
+\begin{array}{cc}
+    \div {\va P} = - \rho_{bounded} &
+    \va P \cdot  \vu n = \sigma_{bounded}\\
+    \div {\va D} = \rho_{free} &
+    \va D \cdot  \vu n = \sigma_{free}\\
+    \curl {\va M} = \va {J_{Amp, V}} &
+    \va M \cross \vu n = \va {J_{Amp, S}}
+\end{array}[cc]
+\]
+
 \subsection{Potenziali}
+
 \begin{gather}
     \va B = \curl{A} \\
     \curl{E} = -\dv{t}\curl{A}\\
     -\grad{V} = \va E + \pdv{A}{t}
 \end{gather}
 
+\subsection{Formule Particolari}
+
+Legge di Biot Savart (Campo Magnetico $\vec B$  generato da un circuito $\mathcal{C}$ percorso da una corrente $i$):
+
+\begin{equation}
+    \frac{\mu_0 i}{4 \pi} \oint_{\mathcal{C}} \frac {dl \times r}{r^3}
+\end{equation}
+
+Forza di Lorentz:
+
+\begin{equation}
+   \vec F = q (\vec E + \vec v \times \vec B )
+\end{equation}
+
+Autoinduttanza:
+\begin{equation}
+    \varPhi = L i
+\end{equation}
+
+Mutua Induttanza: 
+\begin{equation}
+    \varPhi_{k, i} = M_{k , i} \cdot i_k 
+\end{equation}
+
+
+
 \subsection{Onde}
 
 \begin{align}
     \va S & = \frac{\vec E \cross \vec B}{\mu_0 \mu_r}\\
     I & = <S> = \frac{1}{2}\epsilon v E^2_0
+\end{align}
+
+Formula per assorbimento energia:
+
+\begin{align}
+    \mathcal E =&  \epsilon_r \epsilon_0 E_0^2\quad &\text {materiali assorbenti}\\
+    \mathcal E =& 2\epsilon_r \epsilon_0 E_0^2\quad &\text {materiali riflettenti}
 \end{align}
 
 \pagebreak
@@ -66,66 +107,90 @@
     \toprule
     \text{nome} & \text{Cartesiane} & \text{Cilindriche} & \text{Sferiche}\\
 \midrule
+% Formule per Gradiente
 \displaystyle \grad{f} & 
+    % Cartesiane
     \displaystyle \pdv{f}{x} \va x + \pdv{f}{y} \va y + \pdv{f}{z} \va z &
+    % Cilindriche
     \displaystyle \pdv{f}{\rho}\va \rho + \frac{1}{\rho}\pdv{f}{\phi}\va \phi + \pdv{f}{z} \va z &
+    % Sferiche
     \displaystyle \pdv{f}{r} \va r + \frac{1}{r} \pdv{f}{\theta} \va \theta + \frac{1}{r\sin{\theta}} \pdv{f}{\phi} \va \phi\\ 
 \midrule
+% Formule per Divergenza
 \displaystyle \div{\vec{F}} &
+    % Cartesiane
     \displaystyle \pdv{f}{x} + \pdv{f}{y} + \pdv{f}{z} &
-    \displaystyle \frac{1}{\rho}\pdv { \rho A_\rho } { \rho}
+    % Cilindriche
+    \displaystyle \frac{1}{\rho} \pdv{ \rho A_\rho } { \rho}
     + \frac{1} {\rho}\pdv {A_\phi} {\phi}
     + \pdv{ A_z} {z}&
-    \displaystyle \frac{1}{r^2} \pdv{r^2 F_r}{r} + \frac{1}{r \sin \theta} \pdv{F_{\theta} \sin \theta}{\theta} + {1\over r \sin \theta}\pdv{F_{\phi}}{\phi}\\ 
+    % Sferiche
+    \displaystyle \frac{1}{r^2} \pdv{r^2 F_r}{r} + \frac{1}{r \sin \theta} \pdv{F_{\theta} \sin \theta}{\theta} + \frac{1}{ r \sin \theta}\pdv{F_{\phi}}{\phi}\\ 
 \midrule
+% Formule per Rotore
 \displaystyle \curl{\vec{F}} & 
+    % Cartesiane
 \begin{matrix}
     \displaystyle \bigg(\pdv{F_z}{y} - \pdv{F_y}{z} \bigg) \boldsymbol{\hat x}\\
     \displaystyle \bigg(\pdv{F_x}{z} - \pdv{F_z}{x}\bigg) \boldsymbol{\hat y}\\
     \displaystyle \bigg(\pdv{F_y}{x} - \pdv{F_x}{y}\bigg) \boldsymbol{\hat z}
 \end{matrix} & 
+    % Cilindriche
 \begin{matrix}
-    \displaystyle \bigg ({1 \over \rho}{\partial A_z \over \partial \phi}
-    - {\partial A_\phi \over \partial z} \bigg ) \boldsymbol{\hat \rho}  \\
-    \displaystyle \bigg ({\partial A_\rho \over \partial z} - {\partial A_z \over \partial \rho} \bigg) \boldsymbol{\hat \phi} \\
-    \displaystyle{1 \over \rho}\bigg ({\partial ( \rho A_\phi ) \over \partial \rho}
-    - {\partial A_\rho \over \partial \phi} \bigg ) \boldsymbol{\hat z}
+    \displaystyle \bigg (\frac{1 }{ \rho}\pdv{ A_z }{ \phi}
+    - {\partial A_\phi } \pdv{  z} \bigg ) \boldsymbol{\hat \rho}  \\
+    \displaystyle \bigg ({\partial A_\rho }{ \partial z} - {\partial A_z }{ \partial \rho} \bigg) \boldsymbol{\hat \phi} \\
+    \displaystyle{1 }{ \rho}\bigg ({\partial ( \rho A_\phi ) }{ \partial \rho}
+    - {\partial A_\rho }{ \partial \phi} \bigg ) \boldsymbol{\hat z}
 \end{matrix} &
+    % Sferiche
 \begin{matrix}
-    \displaystyle{1 \over r\sin\theta} \bigg ({\partial \over \partial \theta} ( A_\phi\sin\theta )
-    - {\partial A_\theta \over \partial \phi} \bigg ) \boldsymbol{\hat r} \\
-    \displaystyle{1 \over r} \bigg ({1 \over \sin\theta}{\partial A_r \over \partial \phi}
-    - {\partial \over \partial r} ( r A_\phi ) \bigg ) \boldsymbol{\hat \theta}\\
-    \displaystyle{1 \over r}\bigg ({\partial \over \partial r} ( r A_\theta )
-    - {\partial A_r \over \partial \theta} \bigg) \boldsymbol{\hat \phi}
+    \displaystyle \frac{1 }{ r\sin\theta} \bigg (\frac{\partial }{ \partial \theta} ( A_\phi\sin\theta )
+    - \frac{\partial A_\theta }{ \partial \phi} \bigg ) \boldsymbol{\hat r} \\
+    \displaystyle{1 }{ r} \bigg ({1 }{ \sin\theta}{\partial A_r }{ \partial \phi}
+    - \frac{\partial }{ \partial r} ( r A_\phi ) \bigg ) \boldsymbol{\hat \theta}\\
+    \displaystyle \frac{1 }{ r}\bigg (\frac{\partial }{ \partial r} ( r A_\theta )
+    - \frac{\partial A_r }{ \partial \theta} \bigg) \boldsymbol{\hat \phi}
 \end{matrix}
 \\
+\midrule
+% Formule per Laplaciano Scalare
 \nabla^2 f &
-{\partial^2 f \over \partial x^2} + {\partial^2 f \over \partial y^2} + {\partial^2 f \over \partial z^2}
-&{1 \over \rho}{\partial \over \partial \rho} \bigg (\rho {\partial f \over \partial \rho} \bigg )
-+ {1 \over \rho^2}{\partial^2 f \over \partial \phi^2}
-+ {\partial^2 f \over \partial z^2}
-&{1 \over r^2}{\partial \over \partial r} \bigg (r^2 {\partial f \over \partial r} \bigg)
-+ {1 \over r^2\sin\theta}{\partial \over \partial \theta} \bigg(\sin\theta {\partial f \over \partial \theta} \bigg)
-+ {1 \over r^2\sin^2\theta}{\partial^2 f \over \partial \phi^2}\\
-\nabla^2 \mathbf{A} & \nabla^2 A_x \mathbf{\hat x} + \nabla^2 A_y \mathbf{\hat y} + \nabla^2 A_z \mathbf{\hat z} & 
+    % Cartesiane
+    \frac{\partial^2 f }{ \partial x^2} + \frac{\partial^2 f }{ \partial y^2} + \frac{\partial^2 f }{ \partial z^2}&
+    % Cilindriche
+    \frac{1 }{ \rho}\frac{\partial }{ \partial \rho} \bigg (\rho \frac{\partial f }{ \partial \rho} \bigg )
+    + \frac{1 }{ \rho^2}\frac{\partial^2 f }{ \partial \phi^2}
+    + \frac{\partial^2 f }{ \partial z^2}
+    &
+    % Sferiche
+    \frac{1 }{ r^2}\frac{\partial }{ \partial r} \bigg (r^2 \frac{\partial f }{ \partial r} \bigg)
+    + \frac{1 }{ r^2\sin\theta}\frac{\partial }{ \partial \theta} \bigg(\sin\theta \frac{\partial f }{ \partial \theta} \bigg)
+    + \frac{1 }{ r^2\sin^2\theta}\frac{\partial^2 f }{ \partial \phi^2}\\
+\midrule
+    % Formule per laplaciano Vettoriale
+\nabla^2 \mathbf{A} &
+    % Cartesiano
+    \nabla^2 A_x \mathbf{\hat x} + \nabla^2 A_y \mathbf{\hat y} + \nabla^2 A_z \mathbf{\hat z} & 
+    % Cilindriche
 \begin{matrix}
-    \displaystyle \bigg (\nabla^2 A_\rho - {A_\rho \over \rho^2}
-    - {2 \over \rho^2}{\partial A_\phi \over \partial \phi} \bigg) \boldsymbol{\hat\rho}\\
-    \displaystyle \bigg (\nabla^2 A_\phi - {A_\phi \over \rho^2}
-    + {2 \over \rho^2}{\partial A_\rho \over \partial \phi} \bigg ) \boldsymbol{\hat\phi}\\
+    \displaystyle \bigg (\nabla^2 A_\rho - \frac{A_\rho }{ \rho^2}
+    - \frac{2 }{ \rho^2}\frac{\partial A_\phi }{ \partial \phi} \bigg) \boldsymbol{\hat\rho}\\
+    \displaystyle \bigg (\nabla^2 A_\phi - \frac{A_\phi }{ \rho^2}
+    + \frac{2 }{ \rho^2}\frac{\partial A_\rho }{ \partial \phi} \bigg ) \boldsymbol{\hat\phi}\\
     \displaystyle (\nabla^2 A_z ) \boldsymbol{\hat z}
 \end{matrix} & 
+    % Sferiche
 \begin{matrix}
-    \bigg (\nabla^2 A_r - {2 A_r \over r^2}
-    - {2 \over r^2\sin\theta}{\partial (A_\theta \sin\theta) \over \partial\theta}
-    - {2 \over r^2\sin\theta}{\partial A_\phi \over \partial \phi} \bigg ) \boldsymbol{\hat r}\\
-    \bigg (\nabla^2 A_\theta - {A_\theta \over r^2\sin^2\theta}
-    + {2 \over r^2}{\partial A_r \over \partial \theta}
-    - {2 \cos\theta \over r^2\sin^2\theta}{\partial A_\phi \over \partial \phi} \bigg ) \boldsymbol{\hat\theta}\\
-    \bigg (\nabla^2 A_\phi - {A_\phi \over r^2\sin^2\theta}
-    + {2 \over r^2\sin\theta}{\partial A_r \over \partial \phi}
-    + {2 \cos\theta \over r^2\sin^2\theta}{\partial A_\theta \over \partial \phi} \bigg ) \boldsymbol{\hat\phi} & 
+    \bigg (\nabla^2 A_r - \frac{2 A_r }{ r^2}
+    - \frac{2 }{ r^2\sin\theta}\frac{\partial (A_\theta \sin\theta) }{ \partial\theta}
+    - \frac{2 }{ r^2\sin\theta}\frac{\partial A_\phi }{ \partial \phi} \bigg ) \boldsymbol{\hat r}\\
+    \bigg (\nabla^2 A_\theta - \frac{A_\theta }{ r^2\sin^2\theta}
+    + \frac{2 }{ r^2}\frac{\partial A_r }{ \partial \theta}
+    - \frac{2 \cos\theta }{ r^2\sin^2\theta}\frac{\partial A_\phi }{ \partial \phi} \bigg ) \boldsymbol{\hat\theta}\\
+    \bigg (\nabla^2 A_\phi - \frac{A_\phi }{ r^2\sin^2\theta}
+    + \frac{2 }{ r^2\sin\theta}\pdv{ A_r }{  \phi}
+    + \frac{2 \cos\theta }{ r^2\sin^2\theta}\frac{\partial A_\theta }{ \partial \phi} \bigg ) \boldsymbol{\hat\phi} & 
 \end{matrix}
 \\ \bottomrule
 \end{array}

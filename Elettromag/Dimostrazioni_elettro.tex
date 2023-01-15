@@ -1,0 +1,280 @@
+\documentclass[a4paper]{scrarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{bm}
+\usepackage{array}
+\usepackage{physics}
+\usepackage{rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\section{Funzione $\delta(x)$ e Sorgente Puntiforme}
+
+\subsection{Caratteristiche $\delta(x)$}
+
+La funzione $\delta(x)$ è un funzionale (manda una funzione in un numero), non una funzione, quindi non è definita fuori dal segno di integrale.
+
+è rappresentata come una funzione che vale zero ovunque, tranne in un punto in cui vale infinito.
+
+Il suo comportamento è:
+\begin{equation*}
+    \int_{a}^{b} f(x) \delta (x-x_0) dx = f(x_0)
+\end{equation*}
+
+La funzione $\delta$ ha le dimensioni di una densità
+
+Si puo definire $\delta^3(\vec r - \vec r_0) = \delta(x-x_0)\delta(y-y_0)\delta(z-z_0)$
+
+\subsection{Dimostrazione Sorgente Puntiforme}
+
+Considero $\bm {F} (\bm r) = \frac{\hat {\bm{r}}}{r^2}$, tipico per del campo elettrico descritto dalla forza di Coulomb.
+
+Se calcolo la divergenza di $\bm F$, questa è nulla.
+Se calcolo il suo flusso ottengo: $\oint_{\Sigma} \bm {F} \cdot d \bm{a} = 4\pi$
+
+Sfrutto il teorema della divergenza:
+\begin{equation*}
+    \oint_{V} \div{\bm{F}} d\tau = \oint_{\Sigma} \bm{F} \cdot d \bm{a} = 4\pi
+\end{equation*}
+
+Da cui ottengo:
+
+\begin{equation*}
+    \int_{V_sfera} \div {\bm F} dV = 4\pi
+\end{equation*}
+
+Ho una funzione nulla che però ha integrale non nullo:
+nel caso di sorgente puntiforme $\div {\bm F} = 0$, tranne nel punto dove si trova la sorgente, in quel punto vale $\infty$, inoltre il suo integrale è diverso da zero. Si comporta alla stessa maniera di un funzionale: la $\delta(x)$:
+Quindi ottengo:
+\begin{equation*}
+    \div{\bm{F}} = 4\pi \delta^3(\bm r)
+\end{equation*}
+
+Infine per le ipotesi sappiamo che:
+\begin{equation*}
+    \bm F (\bm r) = \frac{\hat r}{r^2} = - \div \frac{1}{r} \implies \laplacian \frac{1}{r} = - 4 \pi \delta ^3 (\bm r)
+\end{equation*}
+
+\subsection{Conseguenze}
+
+Posso rappresentare una carica puntiforme mediante una distribuzione $q \to \rho(\bm r) = q\delta^3(\bm r - \bm r')$
+
+Questa produce il risultato corretto:
+
+\begin{gather*}
+    \bm E (\bm r) = \frac{1}{4\pi\epsilon_0}\int_{V} \frac{q \delta^3 (\bm r' - \bm r_0)}{\left|\bm r - \bm r'\right|^2}\frac{\bm r - \bm r'}{\left| \bm r - \bm r '\right| d^3 \bm r'} = \frac{1}{4 \pi \epsilon_0} \frac{q}{\left|\bm r - \bm r'\right|^2} \frac{\bm r - \bm r_0}{\left|\bm r - \bm r_0\right|}
+\end{gather*}
+
+Il potenziale con questa forma soddisfa l'equazione di Poisson, basta buttarlo dentro l'equazione per verificarlo.
+\begin{equation}
+    \phi_p(\bm r) = \frac{1}{4\pi\epsilon_0}\int_{V}\frac{\rho(\bm r') d^3\bm r'}{\left|\bm r - \bm r'\right|}
+\end{equation}
+
+\section{Condensatori}
+
+I condensatori sono dispositivi che possono immagazzinare energia sotto forma di un campo elettrico.
+
+Per definizione la carica sulle armature è $Q = C \Delta V $
+Se trasporto una carica dall'armatura superiore (che passa da $q$ a $q - dq$) a quella inferiore (che passa da $q$ a $q + dq$) devo compiere un lavoro:
+
+\begin{gather*}
+    dW = V dq\\
+    q = CV\implies V = q/C \\
+    dW = \frac{q}{C} dq    
+\end{gather*}
+
+Integrando:
+\begin{equation}
+    W = \int_{0}^{Q} \frac{q}{C} dq = \frac{1}{2}\frac{Q^2}{C}
+\end{equation}
+
+Il lavoro compiuto è uguale all'energia immagazzinata ($U  = W$), questo lavoro può essere riespresso in funzione del potenziale:
+
+\begin{gather*}
+    U = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} CV^2
+\end{gather*}
+
+Nel condensatore trascurando gli effetti di bordo ho un campo elettrico uniforme diretto dall'armatura a potenziale maggiore all'armatura a potenziale minore.
+Il modulo di $\bm E$ è : $E \frac{\sigma}{\epsilon_0}$, la densità di energia $\rho_E = \frac{1}{2}\frac{\sigma^2}{\epsilon_0}$, per ottenere l'energia basta fare l'integrale sul volume del condensatore.
+
+\subsection{Forza fra le armature di un condensatore}
+
+Condensatore carico, sulle armature ho $\pm Q$
+Ho le armature che si attraggono, ho una forza non elettrica che mantiene la distanza fra le armature.
+
+Primo conto considerando condensatore carico, ma isolato da un generatore, innalzo di un tratto $dz$ l'armatura superiore, la forza meccanica applicata è bilanciata dalla forza elettrica.
+\begin{equation*}
+    dW = \bm F_m \cdot d\bm r = F_m dz = - F_e dz
+\end{equation*}
+In questo modo anche l'energia immagazzinata aumenta, in quanto la capacità diminuisce:
+\begin{equation*}
+    U = \frac{1}{2}\frac{Q^2}{C} \implies dU = \frac{1}{2}Q^2 d \frac{1}{C} = \frac{1}{2}\frac{Q^2}{C}\frac{dz}{L}
+\end{equation*}
+
+L'aumento di energia è dovuto al lavoro fatto dalla forza meccanica. Uguagliando le due espressioni ottengo la forza elettrica.
+Vedo che le due armature di attraggono.
+
+Se la differenza di potenziale è tenuta costante quello che succede è che le cariche varieranno, quindi ho sia un lavoro per muovere l'armatura, che un lavoro per muovere le cariche $dW_G = VdQ = V^2 dC$:
+Il bilancio energetico corretto diventa:
+\begin{gather*}
+    dW_m + dW_G = dU \implies -F_edz + V^2dC = \frac{1}{2}V^2dC\\
+    \to -F_e dz = -\frac{1}{2}V^2dC\\
+    \to F_e = -\frac{1}{2}\frac{Q^2}{C}\frac{1}{L}
+\end{gather*}
+
+è abbastanza analogo il problema in cui le facce si spostano parallelamente l'una all'altra.
+
+\subsection{Conduttori}
+
+\emph{Si parla di induzione completa quando tutte le linee del campo elettrico passano attraverso il conduttore (Caso del condensatore in cui si trascurano gli effetti di bordo)}
+Se voglio una relazione per determinare la carica su ogni conduttore noti i potenziali sui conduttori stessi devo usare il teorema di unicità dell'equazione di Poisson.
+
+\begin{itemize}
+    \item Metto a potenziale $ \phi = 0 $ tutti i conduttori meno il primo, che rimane a $\phi_1$
+    \item Per effetto di $\phi_1$ sugli altri conduttori compare una carica elettrica $q_1, \dots, q_n$
+    \item C'è una relazione lineare tra potenziale e le cariche: $q_i = C_{i1} \phi_1$
+    \item ripeto per ogni conduttore, spegnendo ogni altro conduttore tranne quello in analisi
+    \item Sfruttando al linearità la carica finale su ogni conduttore è 
+    \begin{equation}
+        q_i = \sum_{k=1}^{n}C_{ik} \phi_k
+    \end{equation}
+\end{itemize}
+
+Si può dimostrare che i i coefficenti $C_{ik}$ sono simmetrici sotto scambio di indice, e sono detti \emph{coefficienti di capacità}.
+Posso invertire le relazioni per trovare i potenziale, nel nuovo caso i coefficienti della matrice inversa sono detti \emph{coefficienti di potenziale}.
+
+
+\section {Dielettrici}
+
+\subsection{Dipolo Elettrico}
+
+Sistema di due cariche di segno opposto $-q$ e $+q$ poste a distanza $d$.
+
+Si parte calcolando il potenziale:
+\begin{equation*}
+    \psi = \frac{q}{4\pi\epsilon_0} \frac{1}{\left|\bm r - \bm r_+\right|} - frac{q}{4\pi\epsilon_0} \frac{1}{\left|\bm r - \bm r_-\right|}
+\end{equation*}
+
+Questa formula vale a qualunque distanza, ma a noi interessa a distanze maggiori rispetto a quella dell'atomo ($r \gg d$). Mi serve una formula approssimata.
+
+Considero il potenziale in un punto $\bm r$, uso le coordinate sferiche (Ho simmetria per rotazioni attorno a z, quindi non dipendo dall'angolo azimutale).
+
+Analisi dei denominatori:
+\begin{equation*}
+    \left|\bm r - \bm r_+\right|= \sqrt{r^2 + \frac{d^2}{4} - rd \cos \theta} = r \sqrt{1 + \frac{d^2}{4r^2} - \frac{d}{r}\cos \theta}
+\end{equation*}
+
+Per le condizioni poste in precedenza posso ignorare il termine al quadrato:
+\begin{equation*}
+    \frac{d^2}{r^2} \ll 1
+\end{equation*}
+
+Quindi ottengo:
+\begin{gather}
+    \frac{1}{\left|\bm r - \bm r_+\right|} \approx \frac{1}{r \sqrt{1 - \frac{d}{r}\cos \theta}} \approx \frac{1}{r}(1 + \frac{d}{2r}\cos \theta)\\
+    \frac{1}{\left|\bm r - \bm r_-\right|} \approx \frac{1}{r \sqrt{1 + \frac{d}{r}\cos \theta}} \approx \frac{1}{r}(1 - \frac{d}{2r}\cos \theta)
+\end{gather}
+
+Introduco le approssimazioni nel potenziale:
+
+\begin{gather*}
+    \psi \approx \frac{q}{4\pi\epsilon_0}\left[\frac{1}{r}(1 + \frac{d}{2r}\cos \theta) - \frac{1}{r}(1 - \frac{d}{2r}\cos \theta)\right] \quad \text{I termini uguali si elidono}\\
+    \psi \approx \left[\frac{d}{2r^2}\cos \theta + \frac{d}{2r^2}\cos \theta\right]
+\end{gather*}
+
+\begin{equation}
+    \psi = \frac{qd}{4\pi\epsilon_0}\frac{\cos\theta}{r^2}
+\end{equation}
+
+Dipende solo dal prodotto $\bm p = q \bm d$, che è detto \emph{Momento di Dipolo} (Per le approssimazioni adottate il dipolo ideale è puntiforme).
+Il potenziale varia come $1/r^2$, quindi si attenua più velocemente di una carica puntiforme.
+Ho una dipendenza rispetto a $\theta$, quindi perdo la simmetria sferica, ho una direzione privilegiata che è l'asse delle due cariche, che in questo caso è l'asse z.
+
+Usando una scrittura vettoriale posso riscrivere come:
+
+\begin{equation}
+    \psi(r, \theta) = \frac{1}{4 \pi \epsilon_0} \frac{\bm{\hat e_r} \cdot \bm p}{r^2}
+\end{equation}
+
+Il campo elettrico diventa:
+\begin{equation}
+    \bm E = \frac{1}{4\pi\epsilon_0} \frac{p}{r^3} (2 \va{ e_r}\cos \theta + \va{ e_\theta} \sin\theta )
+\end{equation}
+
+\subsubsection*{Forza Sul Dipolo}
+
+Partendo dal caso di campo elettrico uniforme
+
+Il sistema dipolo in se e per se non trasla, infatti essendo composto di due cariche di segno opposto su di esse agiscono due forze di uguale intensità e di segno opposto, quindi si cancellano. Tuttavia è perfettamente libero di ruotare:
+\begin{equation}
+    \bm \tau = q \bm E \times \bm d = \bm E \times \bm p
+\end{equation}
+
+Quindi ho un lavoro di rotazione che si ottiene intergando la seguente:
+\begin{equation*}
+    dW = \tau d\alpha
+\end{equation*}
+
+Come sempre il lavoro della forza esterna è pari a una variazione dell'energia interna del sistema, quindi ottegno che:
+\begin{equation*}
+    U(\theta) = -pE\cos \theta = - \bm p \cdot \bm E
+\end{equation*}
+
+In caso di campo elettrico non uniforme invece succedono cose, ma tutto si riassume in:
+
+\begin{equation*}
+    \bm F = (\bm p \cdot \nabla)\bm E
+\end{equation*}
+
+\section{Materia Polarizzata}
+
+\subsection{Campo elettrico generato}
+
+Introduco $\bm P = n(\bm r)\bm p$ \emph{Vettore di densità di polarizzazione}.
+Con $n(\bm r)$ che è la densità di dipoli per unità di volume.
+Quindi la sua unità di misura è \emph{Coulomb al metro quadro}.
+Suppongo di avere un volume infinitesimo con un numero di dipoli molto grade, allora posso definire:
+\begin{equation*}
+    d\bm p = \bm P dv
+\end{equation*}
+
+Per calcolare il campo elettrico all'esterno suddivido il blocco in tante colonne verticali, a questo punto calcolo il campo elettrico generato da ogni colonna per cui $dv = da dz$, sfrutto il potenziale generato da un dipolo:
+\begin{align*}
+    d\phi(\bm r) &= \frac{d\bm p \cdot \va r}{4\pi\epsilon_0r^2}= \frac{dp\cos\theta}{4\pi\epsilon_0r^2}\\
+    &= \int_{z_1}^{z_2}\frac{Pdadz\cos \theta}{4\pi\epsilon_0}\\
+    &= \frac{Pda}{4\pi\epsilon_0}\int_{z_1}^{z_2}\frac{dz \cos \theta}{r^2}
+\end{align*}
+
+è necessario guardare la relazione tra $dr$ e $dx$:
+\begin{equation*}
+    dz \cos \theta = -dr
+\end{equation*}
+
+\begin{align*}
+    d\phi(\bm r) &= \frac{Pda}{4\pi\epsilon_0} \int_{z_1}^{z_2}\frac{dz\cos\theta}{r^2}\\
+    &= \frac{Pda}{4\pi\epsilon_0} \int_{r_1}^{r_2} - \frac{dr}{r^2}\\
+    &= \frac{Pda}{4\pi\epsilon_0} (\frac{1}{r_2}- \frac{1}{r_1})
+\end{align*}
+
+Questa relazione è identica  aquella del potenziale generato da una carica $+Pda$ posta in $z_2$ e una carica $-Pda$ posta in $z_1$.
+Per ottenere il potenziale a questo punto basta fare il flusso attraverso la superficie del dielettrico (In quanto il campo che esce dalla superificie laterale di una colonna, entra in quella laterale di un'altra colonna, a meno che non ci si trovi sulla superifice del blocco).
+Il risultato finale è che il blocco di materiale polarizzato generea un potenziale elettrico identico a quello di due densità di carica superificiale poste sulle superfici esterne del blocco.
+
+Da quest'ultima considerazione si ottiene:
+\begin{equation}
+    \sigma  = P = |\bm P|
+\end{equation}
+
+In questo caso si è assunta polarizzazione uniforme e diretta lungo l'asse z.
+
+
+\section{Onde Elettromagnetiche}
+
+
+
+\end{document}

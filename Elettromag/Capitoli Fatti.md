@@ -1,0 +1,42 @@
+# Capitoli trascritti nelle parti importanti
+
+- [x] Capitolo 1
+- [x] Capitolo 2
+- [ ] Capitolo 3
+- [ ] Capitolo 4
+- [ ] Capitolo 5
+- [ ] Capitolo 6
+- [ ] Capitolo 7
+- [ ] Capitolo 8
+- [x] Capitolo 9
+- [x] Capitolo 10, anche se va riguardato
+- [x] Capitolo 11, anche se va riguardato
+- [x] Capitolo 12
+- [x] Capitolo 13
+- [ ] Capitolo 14
+- [ ] Capitolo 15
+- [ ] Capitolo 16
+- [ ] Capitolo 17
+- [ ] Capitolo 18
+- [ ] Capitolo 19
+- [ ] Capitolo 20
+- [ ] Capitolo 21
+- [ ] Capitolo 22
+- [ ] Capitolo 23
+- [ ] Capitolo 24
+- [ ] Capitolo 25
+- [ ] Capitolo 26
+- [ ] Capitolo 27
+- [ ] Capitolo 28
+- [ ] Capitolo 29
+- [ ] Capitolo 30
+- [ ] Capitolo 31
+- [ ] Capitolo 32
+- [ ] Capitolo 33
+- [ ] Capitolo 34
+- [ ] Capitolo 35
+- [ ] Capitolo 36
+- [ ] Capitolo 37
+- [ ] Capitolo 38
+- [ ] Capitolo 39
+- [ ] Capitolo 40

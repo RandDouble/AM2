@@ -5,6 +5,7 @@
 \usepackage[italian]{babel}
 
 \usepackage{amsmath, amsthm, amsfonts}
+\usepackage{bm}
 \usepackage{array}
 \usepackage{physics}
 \usepackage{rotating}
@@ -26,6 +27,16 @@
     \bottomrule
 \end{array}    
 \]
+
+\subsection{Significati}
+
+\begin{itemize}
+    \item I Equazione: l'oggetto che genera il campo $\bm D$ sono le cariche libere.
+    \item II Equazione: In assenza di campo magnetico variabile il campo elettrico è conservativo. Posso definire un potenziale Scalare.
+    \item III Equazione: Non esiste un monopolo magnetico.
+    \item IV Equazione: Il campo magnetico è solenoidale. Ha un potenziale vettore.
+\end{itemize}
+
 
 \section{Relazioni tra i vari campi}
 
@@ -53,31 +64,95 @@
 \subsection{Potenziali}
 
 \begin{gather}
-    \va B = \curl{A} \\
-    \curl{E} = -\dv{t}\curl{A}\\
-    -\grad{V} = \va E + \pdv{A}{t}
+    \va B = \curl{\va A} \\
+    \curl{\va E} = -\dv{t}\curl{\va A}\\
+    -\grad{V} = \va E + \pdv{\va A}{t}
 \end{gather}
 
 \subsection{Formule Particolari}
 
-Legge di Biot Savart (Campo Magnetico $\vec B$  generato da un circuito $\mathcal{C}$ percorso da una corrente $i$):
+\subsubsection*{Legge di Coulomb}
+
+\begin{equation}
+    \bm F_{12} = \frac{1}{4\pi\epsilon_0}\frac{q_1 q_2}{|r_1 - r_2|^3}(\bm r_1 - \bm r_2)
+\end{equation}
+
+La forza di Coulomb è lineare, vale pertanto il \emph{Principio di Sovrapposizione}, quindi per trovare la forza su una carica devo sovrapporre gli effetti delle altre cariche agenti.
+
+\subsection*{Distribuzione continua in un volume di carica}
+
+\begin{equation}
+    \bm E(\bm r_0 ) = \int_{V} \frac{\rho(\bm r) \text{d}^3 \bm r}{|\bm r_0 - \bm r|^2} \hat{u}(\bm r)
+\end{equation}
+
+\subsubsection*{Definizione di Potenziale}
+(Si ottiene da $E = -\nabla V$):
+
+\begin{equation}
+    V(r_A) - V(r_B) = \int_A^B \bm E \cdot ds
+\end{equation}
+
+\subsubsection*{Definizione Generale di Potenziale}
+
+\begin{equation}
+    \phi_p(\bm r) = \frac{1}{4\pi\epsilon_0}\int_{V}\frac{\rho(\bm r') d^3\bm r'}{\left|\bm r - \bm r'\right|}
+\end{equation}
+
+
+\subsubsection*{Equazione di Laplace}
+
+Si ottiene combinando la definizone di campo elettrico mediante il potenziale e la I equazione di Maxwell per il campo elettrico:
+
+\begin{gather*}
+    \div E = \frac{\rho}{\epsilon_0}\\
+    E = - \grad \phi\\
+    - \div \grad \phi = \frac{\rho}{\epsilon_0}\\
+    \laplacian \phi = -\frac{\rho}{\epsilon_0} \quad \text{Equazione di Poisson}
+\end{gather*}
+
+\subsubsection*{Equazione di Poisson}
+
+è l'omogenea dell'equazione di Laplace. Le due coincidono quando $\rho = 0$
+
+\begin{equation}
+    \laplacian \phi = 0
+\end{equation}
+
+La soluzione dell'equazione di Laplace è unica ed è data dalla somma della soluzione omogenea alla soluzione di Poisson, unitamente alle condizioni al contorno che ne danno l'unicità.
+
+\subsubsection*{Capacità di un conduttore}
+
+\begin{equation}
+    C = \frac{q}{V} = 
+    \frac{\oint_\Sigma \sigma (x',y',z') d\Sigma}{\frac{1}{4\pi\epsilon_0} \oint_\Sigma \frac{\sigma(x',y',z')}{\left| \bm{r} - \bm{r'} \right|}} d\Sigma
+\end{equation}
+
+\subsubsection*{Condensatore a Facce Piane Parallele}
+La Capacità dipende solo dalla geometria del sistema
+\begin{equation*}
+    C = \epsilon_0 \frac{A}{d}
+\end{equation*}
+
+
+\subsubsection*{Legge di Biot Savart} 
+(Campo Magnetico $\bm B$  generato da un circuito $\mathcal{C}$ percorso da una corrente $i$):
 
 \begin{equation}
     \frac{\mu_0 i}{4 \pi} \oint_{\mathcal{C}} \frac {dl \times r}{r^3}
 \end{equation}
 
-Forza di Lorentz:
+\subsubsection*{Forza di Lorentz}
 
 \begin{equation}
-   \vec F = q (\vec E + \vec v \times \vec B )
+   \bm F = q (\bm E + \bm v \times \bm B )
 \end{equation}
 
-Autoinduttanza:
+\subsubsection*{Autoinduttanza}
 \begin{equation}
     \varPhi = L i
 \end{equation}
 
-Mutua Induttanza: 
+\subsubsection*{Mutua Induttanza} 
 \begin{equation}
     \varPhi_{k, i} = M_{k , i} \cdot i_k 
 \end{equation}
@@ -87,7 +162,7 @@ Mutua Induttanza:
 \subsection{Onde}
 
 \begin{align}
-    \va S & = \frac{\vec E \cross \vec B}{\mu_0 \mu_r}\\
+    \va S & = \frac{\bm E \cross \bm B}{\mu_0 \mu_r}\\
     I & = <S> = \frac{1}{2}\epsilon v E^2_0
 \end{align}
 
@@ -117,7 +192,7 @@ Formula per assorbimento energia:
     \displaystyle \pdv{f}{r} \va r + \frac{1}{r} \pdv{f}{\theta} \va \theta + \frac{1}{r\sin{\theta}} \pdv{f}{\phi} \va \phi\\ 
 \midrule
 % Formule per Divergenza
-\displaystyle \div{\vec{F}} &
+\displaystyle \div{\bm{F}} &
     % Cartesiane
     \displaystyle \pdv{f}{x} + \pdv{f}{y} + \pdv{f}{z} &
     % Cilindriche
@@ -128,7 +203,7 @@ Formula per assorbimento energia:
     \displaystyle \frac{1}{r^2} \pdv{r^2 F_r}{r} + \frac{1}{r \sin \theta} \pdv{F_{\theta} \sin \theta}{\theta} + \frac{1}{ r \sin \theta}\pdv{F_{\phi}}{\phi}\\ 
 \midrule
 % Formule per Rotore
-\displaystyle \curl{\vec{F}} & 
+\displaystyle \curl{\bm{F}} & 
     % Cartesiane
 \begin{matrix}
     \displaystyle \bigg(\pdv{F_z}{y} - \pdv{F_y}{z} \bigg) \boldsymbol{\hat x}\\

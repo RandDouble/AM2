@@ -67,12 +67,12 @@ Posso rappresentare una carica puntiforme mediante una distribuzione $q \to \rho
 Questa produce il risultato corretto:
 
 \begin{gather*}
-    \bm E (\bm r) = \frac{1}{4\pi\epsilon_0}\int_{V} \frac{q \delta^3 (\bm r' - \bm r_0)}{\left|\bm r - \bm r'\right|^2}\frac{\bm r - \bm r'}{\left| \bm r - \bm r '\right| d^3 \bm r'} = \frac{1}{4 \pi \epsilon_0} \frac{q}{\left|\bm r - \bm r'\right|^2} \frac{\bm r - \bm r_0}{\left|\bm r - \bm r_0\right|}
+    \bm E (\bm r) = \frac{1}{4\pi\varepsilon_0}\int_{V} \frac{q \delta^3 (\bm r' - \bm r_0)}{\left|\bm r - \bm r'\right|^2}\frac{\bm r - \bm r'}{\left| \bm r - \bm r '\right| d^3 \bm r'} = \frac{1}{4 \pi \varepsilon_0} \frac{q}{\left|\bm r - \bm r'\right|^2} \frac{\bm r - \bm r_0}{\left|\bm r - \bm r_0\right|}
 \end{gather*}
 
 Il potenziale con questa forma soddisfa l'equazione di Poisson, basta buttarlo dentro l'equazione per verificarlo.
 \begin{equation}
-    \phi_p(\bm r) = \frac{1}{4\pi\epsilon_0}\int_{V}\frac{\rho(\bm r') d^3\bm r'}{\left|\bm r - \bm r'\right|}
+    \phi_p(\bm r) = \frac{1}{4\pi\varepsilon_0}\int_{V}\frac{\rho(\bm r') d^3\bm r'}{\left|\bm r - \bm r'\right|}
 \end{equation}
 
 \section{Condensatori}
@@ -100,7 +100,7 @@ Il lavoro compiuto è uguale all'energia immagazzinata ($U  = W$), questo lavoro
 \end{gather*}
 
 Nel condensatore trascurando gli effetti di bordo ho un campo elettrico uniforme diretto dall'armatura a potenziale maggiore all'armatura a potenziale minore.
-Il modulo di $\bm E$ è : $E \frac{\sigma}{\epsilon_0}$, la densità di energia $\rho_E = \frac{1}{2}\frac{\sigma^2}{\epsilon_0}$, per ottenere l'energia basta fare l'integrale sul volume del condensatore.
+Il modulo di $\bm E$ è : $E \frac{\sigma}{\varepsilon_0}$, la densità di energia $\rho_E = \frac{1}{2}\frac{\sigma^2}{\varepsilon_0}$, per ottenere l'energia basta fare l'integrale sul volume del condensatore.
 
 \subsection{Forza fra le armature di un condensatore}
 
@@ -157,7 +157,7 @@ Sistema di due cariche di segno opposto $-q$ e $+q$ poste a distanza $d$.
 
 Si parte calcolando il potenziale:
 \begin{equation*}
-    \psi = \frac{q}{4\pi\epsilon_0} \frac{1}{\left|\bm r - \bm r_+\right|} - frac{q}{4\pi\epsilon_0} \frac{1}{\left|\bm r - \bm r_-\right|}
+    \psi = \frac{q}{4\pi\varepsilon_0} \frac{1}{\left|\bm r - \bm r_+\right|} - frac{q}{4\pi\varepsilon_0} \frac{1}{\left|\bm r - \bm r_-\right|}
 \end{equation*}
 
 Questa formula vale a qualunque distanza, ma a noi interessa a distanze maggiori rispetto a quella dell'atomo ($r \gg d$). Mi serve una formula approssimata.
@@ -183,12 +183,12 @@ Quindi ottengo:
 Introduco le approssimazioni nel potenziale:
 
 \begin{gather*}
-    \psi \approx \frac{q}{4\pi\epsilon_0}\left[\frac{1}{r}(1 + \frac{d}{2r}\cos \theta) - \frac{1}{r}(1 - \frac{d}{2r}\cos \theta)\right] \quad \text{I termini uguali si elidono}\\
+    \psi \approx \frac{q}{4\pi\varepsilon_0}\left[\frac{1}{r}(1 + \frac{d}{2r}\cos \theta) - \frac{1}{r}(1 - \frac{d}{2r}\cos \theta)\right] \quad \text{I termini uguali si elidono}\\
     \psi \approx \left[\frac{d}{2r^2}\cos \theta + \frac{d}{2r^2}\cos \theta\right]
 \end{gather*}
 
 \begin{equation}
-    \psi = \frac{qd}{4\pi\epsilon_0}\frac{\cos\theta}{r^2}
+    \psi = \frac{qd}{4\pi\varepsilon_0}\frac{\cos\theta}{r^2}
 \end{equation}
 
 Dipende solo dal prodotto $\bm p = q \bm d$, che è detto \emph{Momento di Dipolo} (Per le approssimazioni adottate il dipolo ideale è puntiforme).
@@ -198,12 +198,12 @@ Ho una dipendenza rispetto a $\theta$, quindi perdo la simmetria sferica, ho una
 Usando una scrittura vettoriale posso riscrivere come:
 
 \begin{equation}
-    \psi(r, \theta) = \frac{1}{4 \pi \epsilon_0} \frac{\bm{\hat e_r} \cdot \bm p}{r^2}
+    \psi(r, \theta) = \frac{1}{4 \pi \varepsilon_0} \frac{\bm{\hat e_r} \cdot \bm p}{r^2}
 \end{equation}
 
 Il campo elettrico diventa:
 \begin{equation}
-    \bm E = \frac{1}{4\pi\epsilon_0} \frac{p}{r^3} (2 \va{ e_r}\cos \theta + \va{ e_\theta} \sin\theta )
+    \bm E = \frac{1}{4\pi\varepsilon_0} \frac{p}{r^3} (2 \va{ e_r}\cos \theta + \va{ e_\theta} \sin\theta )
 \end{equation}
 
 \subsubsection*{Forza Sul Dipolo}
@@ -245,9 +245,9 @@ Suppongo di avere un volume infinitesimo con un numero di dipoli molto grade, al
 
 Per calcolare il campo elettrico all'esterno suddivido il blocco in tante colonne verticali, a questo punto calcolo il campo elettrico generato da ogni colonna per cui $dv = da dz$, sfrutto il potenziale generato da un dipolo:
 \begin{align*}
-    d\phi(\bm r) &= \frac{d\bm p \cdot \va r}{4\pi\epsilon_0r^2}= \frac{dp\cos\theta}{4\pi\epsilon_0r^2}\\
-    &= \int_{z_1}^{z_2}\frac{Pdadz\cos \theta}{4\pi\epsilon_0}\\
-    &= \frac{Pda}{4\pi\epsilon_0}\int_{z_1}^{z_2}\frac{dz \cos \theta}{r^2}
+    d\phi(\bm r) &= \frac{d\bm p \cdot \va r}{4\pi\varepsilon_0r^2}= \frac{dp\cos\theta}{4\pi\varepsilon_0r^2}\\
+    &= \int_{z_1}^{z_2}\frac{Pdadz\cos \theta}{4\pi\varepsilon_0}\\
+    &= \frac{Pda}{4\pi\varepsilon_0}\int_{z_1}^{z_2}\frac{dz \cos \theta}{r^2}
 \end{align*}
 
 è necessario guardare la relazione tra $dr$ e $dx$:
@@ -256,9 +256,9 @@ Per calcolare il campo elettrico all'esterno suddivido il blocco in tante colonn
 \end{equation*}
 
 \begin{align*}
-    d\phi(\bm r) &= \frac{Pda}{4\pi\epsilon_0} \int_{z_1}^{z_2}\frac{dz\cos\theta}{r^2}\\
-    &= \frac{Pda}{4\pi\epsilon_0} \int_{r_1}^{r_2} - \frac{dr}{r^2}\\
-    &= \frac{Pda}{4\pi\epsilon_0} (\frac{1}{r_2}- \frac{1}{r_1})
+    d\phi(\bm r) &= \frac{Pda}{4\pi\varepsilon_0} \int_{z_1}^{z_2}\frac{dz\cos\theta}{r^2}\\
+    &= \frac{Pda}{4\pi\varepsilon_0} \int_{r_1}^{r_2} - \frac{dr}{r^2}\\
+    &= \frac{Pda}{4\pi\varepsilon_0} (\frac{1}{r_2}- \frac{1}{r_1})
 \end{align*}
 
 Questa relazione è identica  aquella del potenziale generato da una carica $+Pda$ posta in $z_2$ e una carica $-Pda$ posta in $z_1$.
@@ -273,7 +273,200 @@ Da quest'ultima considerazione si ottiene:
 In questo caso si è assunta polarizzazione uniforme e diretta lungo l'asse z.
 
 
+\section{Forza di Lorentz}
+
+La forza totale agente su una carica è:
+\begin{equation}
+    \bm F = q \left(\bm E + \bm v \times \bm B\right)
+\end{equation}
+
+Questa vale anche per campi variabili nel tempo, è una relazione locale (tutte le grandezze sono misurate nello stesso punto allo stesso tempo e rispetto allo stesso sistema di riferimento inerziale).
+La forza di Lorentz è una forza che non compie lavoro essendo sempre perpendicolare alla traiettoria.
+Quindi una particella che si muove con velocità uniforme percorre un \emph{Moto Circolare Uniforme}, caratterizzato da una frequenza detta \emph{di ciclotrone}:
+\begin{equation}
+    \omega = \frac{qB}{m}
+\end{equation}
+
+\subsection*{Forza su un filo percorso da corrente}
+
+Filo conduttore di sezione $S$ percorso da una corrente $I$, i portatori portano una carica $q$ e ho una densità $\rho_N$ di portatori nel filo.
+Suppongo che tutte le particelle abbiano la stessa velocità $v$, se prendo un tratto infinitesimo di filo $d\bm l $ trovo la seguente relazione:
+\begin{equation*}
+    dN = \rho_N S |d\bm l|
+\end{equation*}
+
+Per il numero di cariche all'interno del filo conduttore.
+
+Se sono immerso in un campo magnetico su ogni particella agisce la forza di lorentz, che sul tratto si traduce in:
+
+\begin{gather*}
+    d \bm F = \bm f  dN\\
+    \bm f = q \bm v \times \bm B\\
+    d \bm F = q \bm v \times \bm B  dN\\
+    d \bm F = q \rho_N S |d\bm l| \bm v \times \bm B\\
+    \bm I \parallel |d \bm l| \implies \bm v \parallel |d \bm l|\\
+    |\bm J| = q \rho_N |\bm v|\\ 
+    d \bm F = |\bm J| S |d\bm l| \times \bm B\\
+    d \bm F = I |d\bm l| \times \bm B\\
+    \bm F = I \oint_C d\bm l \times \bm B
+\end{gather*}
+
+Ho trovato la forza totale agente su un circuito $C$.
+Posso fare il discorso precedenti con i plasmi oppure  con cariche in un fluido parlando della densità volumetrica di corrente e della forza volumetrica.
+
+\subsection{Legge di Biot-Savart}
+\subsubsection*{Sorgenti del campo magnetico}
+
+Operativametne il campo magnetico è generato da una carica in movimento. La forza di Lorentz non definisce chi sia la sorgente del campo magnetico. Abbiamo i magneti permanenti che generano un campo magnetico, abbiamo le corretni che subiscono un campo magnetico e ne generano uno. La vera origine dei campi magnetici è complessa, serve una teoria quantistica.
+
+\subsubsection*{La legge}
+
+Detta anche prima formula di Laplace, permette il calcolo del campo di induzione magnetica generato da un filo percorso da corrente. \emph{Vale solo per correnti stazionarie}. 
+Considero filo percorso da una corrente $i$. Considero un elemento $dl$ del filo. Il contributo al campo $\bm B$ inel punto $\bm r$ è dato da:
+\begin{equation}
+d \bm B = \frac{\mu_0}{4\pi}i \frac{d \bm l \times \va r}{r^2}
+\end{equation}
+
+Il pezzo di filo fa parte di un circuito chiuso, bisogna integrare su ogni pezzo di filo per ottenere il campo magnetico finale:
+\begin{equation}
+    d \bm B(\bm r_2) = \frac{\mu_0}{4\pi} i \frac{d \bm l_1 \times (\bm r_2 -\bm r_1)}{\left|\bm r_2 - \bm r_1\right|^3}
+    \implies \bm B (\bm r_2) = \frac{\mu_0}{4 \pi}i \oint_{filo} \frac{d \bm l_1 \times (\bm r_2 -\bm r_1)}{\left|\bm r_2 - \bm r_1\right|^3}
+\end{equation}
+
+\subsubsection*{Conduzione di Magnetostatica}
+
+La condizione di stazionarietà che definisce la magnetostatica è dovuta a delle cariche in movimento, un movimento con delle caratteristiche precise, per cui non si hanno variazioni sulla densità di carica: Deve valere la \emph{condizione di continuità}
+
+\begin{equation}
+    \div \bm J = - \pdv{\rho}{t}
+\end{equation}
+
+In particolare per la magnetostatica deve valere che il termine a sinistra sia nullo, quindi si riduce a:
+\begin{equation}
+    \div \bm J = 0
+\end{equation}
+
+Per cui si hanno correnti continue, ossia che non variano nel tempo.
+
+\subsection{Campo Magnetico Filo}
+
+Filo infinito lungo l'asse $x\implies d \bm l = \va e_x dx$, il punto su cui calcolare il campo magnetico giace sull'asse $y$.
+\begin{gather*}
+    \va r = \va e_x \sin \theta + \va e_y \cos \theta\\
+    \va e_x \times \va e_x = 0\\
+    d \bm l \times \va r = \va e_x \times \va e_y \sin \theta dx = \va e_z \sin \theta dx
+\end{gather*}
+Il contributo del campo magnetico è quindi perpendicolare al piano xy. Ora voglio far dipendere tutto dall'angolo $\theta$, visto che integrare su tutti i reali fa un po' schifo\dots
+
+\begin{gather*}
+    (\text{a distanza verticale di r da dl})\, a = r \sin(\pi - \theta) = r \sin \theta \implies r = \frac{a}{\sin \theta}\\
+    (\text{x distanza orizontale di r da dl})\, a= x \tan (\pi -\theta) = -x \tan \theta \implies x = -a \frac{\cos \theta}{\sin \theta}\\
+    \implies dx = a \frac{d \theta}{\sin^2 \theta}\\
+    d \bm B = \frac{\mu_0}{4\pi}i \frac{\va e_z \sin \theta}{a}d\theta
+\end{gather*}
+
+Integrando da $0 \to \pi$ ho ottenuto il risultato cercato.
+
 \section{Onde Elettromagnetiche}
+
+\subsection{Teorema di Poynting}
+
+Energia associata a campi elettrici:
+\begin{equation*}
+    U_E = \frac{\varepsilon_0}{2} \int E^2 dV 
+\end{equation*}
+
+Energia associata a campi magnetici:
+\begin{equation*}
+    \frac{1}{2 \mu_0} \int B^2 dV
+\end{equation*}
+
+Queste valgono anche per campi elettromagnetici, faccio semplicemente la somma:
+
+\begin{equation}
+    U_{EM} = \frac{1}{2} \int (\varepsilon_0 E^2 + \frac{1}{\mu_0} B^2)dV
+\end{equation}
+
+Suppongo di avere una distribuzione di carica $\rho$ e di corrente $\bm J$, che generino un campo EM.
+
+Suppongo le cariche in movimento, $\bm v$ è la velocità della carica contenuta in $dV$.
+Calcoliamo il lavoro fatto dal campo EM sulle cariche e le correnti nel tempo $dt$:
+Prendo un eletento di volume $dV$,
+\begin{equation*}
+    dq = \rho dV \quad \bm J dV = \rho \bm v dV = dq \bm v
+\end{equation*}
+
+Sulla carica infinitesima agisce la Forza di Lorentz:
+
+\begin{gather*}
+    dw dV = \bm f \cdot d\bm s = \bm f \cdot \bm v dt = dq (\bm E + \bm v\times \bm B )\cdot \bm v dt = dq \bm E \cdot \bm v dt\\
+    dw dV = \rho dV \bm E \cdot \bm v dt = \rho \bm v \cdot \bm E dtdV = \bm J \cdot \bm E dtdV
+\end{gather*}
+
+Quindi la potenza erogata nel volume è:
+\begin{equation}
+    \frac{dw}{dt}dV = \bm J \cdot \bm E dV
+\end{equation}
+
+Integrando sul Volume:
+
+\begin{equation*}
+    \frac{dW}{dt}= \int \bm E \cdot \bm J dV
+\end{equation*}
+
+Considero la IV equazione di Maxwell:
+
+\begin{equation*}
+    \curl {\bm B} = \mu_0 \bm J + \mu_0\varepsilon_0 \pdv{\bm E}{t} \implies \bm J = \frac{1}{\mu_0} \curl {\bm B} - \varepsilon_0 \pdv{\bm E}{t}
+\end{equation*}
+
+La inserisco all'interno dell'integrale:
+
+\begin{equation*}
+    \frac{dW}{dt} = \int \left(\frac{1}{\mu_0} \bm E \cdot \curl{\bm B} - \varepsilon_0 \bm E \cdot \pdv{\bm E}{t} \right) dV
+\end{equation*}
+
+Sfrutta la regola del prodotto scalare per il rotore:
+\begin{gather*}
+    \div (\bm A \times \bm C) = \bm C \cdot (\curl{\bm A}) - \bm A \cdot (\curl{\bm C})\\
+    E \cdot \curl{\bm B} = - \div{\bm E \times \bm B} + \bm B \cdot \curl{\bm E}\\
+    \curl{\bm E} = - \pdv{\bm B}{t}\\
+    E \cdot \curl{\bm B} = - \div{\bm E \times \bm B} - \bm B \cdot \pdv{\bm B}{t}
+\end{gather*}
+
+Inserita nell'espressione della potenza:
+
+\begin{equation*}
+    \frac{dW}{dt} = \int \left(- \frac{1}{\mu_0}\div{\bm E \times \bm B} - \bm B \cdot \pdv{\bm B}{t} - \varepsilon_0 \bm E \cdot \pdv{\bm E}{t}\right)dV
+\end{equation*}
+
+Si può osservare che:
+\begin{equation*}
+    \bm E \cdot \pdv{E}{t} = \frac{1}{2} \pdv{E^2}{t} \qquad
+    \bm B \cdot \pdv{B}{t} = \frac{1}{2} \pdv{B^2}{t}
+\end{equation*}
+
+Quindi posso sostituire all'intero dell'integrale:
+\begin{equation*}
+    \frac{dW}{dt} = -\frac{1}{\mu_0}\int \div{\left(\bm E \times \bm B\right)} dV - \pdv{t}\frac{1}{2}\int\left(\frac{1}{\mu_0}B^2- \varepsilon_0 {E^2}\right) dV
+\end{equation*}
+
+Il secondo integrale descrive l'energia elettromagnetica del sistema, invece il primo integrale descrive l'energia che fluisce attraverso la superficie che delimita il sistema.
+Sfrutto il teorema della divergenza per dimostrare questa seconda affermazione:
+
+\begin{equation*}
+    \frac{dW}{dt} = -\frac{1}{\mu_0}\oint_{\partial V} \left(\bm E \times \bm B\right) d\bm a - \pdv{t}\frac{1}{2}\int_V \left(\frac{1}{\mu_0}B^2- \varepsilon_0 {E^2}\right) dV
+\end{equation*}
+
+Definisco il \emph{vettore di Poynting}
+\begin{equation}
+    \bm S = \frac{1}{\mu_0} \bm E \times \bm B
+\end{equation}
+
+La potenza diventa:
+\begin{equation}
+    \frac{dW}{dt}= - \oint_{\partial V} \bm S \cdot d \bm a - \pdv{U_EM}{t}
+\end{equation}
 
 
 

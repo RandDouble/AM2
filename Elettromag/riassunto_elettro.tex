@@ -37,6 +37,24 @@
     \item IV Equazione: Il campo magnetico è solenoidale. Ha un potenziale vettore.
 \end{itemize}
 
+\section{Condizioni al contorno}
+
+Il contorno è la superficie di separazione da un mezzo all'altro.
+
+\[
+\begin{array}{lll}
+    \toprule
+    & \text{mezzo lineare} & \sigma_f = 0\quad K_f = 0\\
+    \midrule
+    D_{1\perp} - D_{2\perp} = \sigma_f & \epsilon_1 E_{1\perp} - \epsilon_2 E_{2\perp} & \epsilon_1 E_{1\perp} = \epsilon_2 E_{2\perp}\\
+    \bm E_{1\parallel} = \bm E_{2\parallel} & \bm E_{1\parallel} = \bm E_{2\parallel} & \bm E_{1\parallel} = \bm E_{2\parallel} \\
+    \bm H_{1\parallel} - \bm H_{2\parallel} = \bm K_f \times \va n  & \frac{1}{\mu_1}\bm B_{1\parallel} - \frac{1}{\mu_2}\bm B_{2\parallel} = \bm K_f \times \va n & \frac{1}{\mu_1}\bm B_{1\parallel} = \frac{1}{\mu_2}\bm B_{2\parallel} \\
+    B_{1\perp} = B_{2\perp} & B_{1\perp} = B_{2\perp} & B_{1\perp} = B_{2\perp} \\
+    \bottomrule
+\end{array}   
+\]
+
+Dove $K_f$ è una densità di corrente superficiale, mentre $\sigma_f$ è una densità di carica superficiale.
 
 \section{Relazioni tra i vari campi}
 
@@ -60,6 +78,7 @@
     \va M \cross \vu n = \va {J_{Amp, S}}
 \end{array}[cc]
 \]
+
 
 \subsection{Potenziali}
 
@@ -281,7 +300,7 @@ Formula per assorbimento energia:
 \curl \curl \mathbf{F} = \nabla \times (\nabla \times \mathbf{F}) = \nabla (\nabla \cdot \mathbf{F}) - \nabla^2 \mathbf{F}\\
 \nabla^2 f g = f \nabla^2 g + 2 \nabla f \cdot \nabla g + g \nabla^2 f
 \end{gather}
-Formula di Lagrange per il prodotto vettoriale: 
+Formula di Lagrange per prodotto vettoriale: 
 \begin{gather}
 \mathbf{A} \times (\mathbf{B} \times \mathbf{C}) = \mathbf{B} (\mathbf{A} \cdot \mathbf{C}) - \mathbf{C} (\mathbf{A} \cdot \mathbf{B})\\
 \nabla\cdot(f \mathbf A)=f \nabla\cdot\mathbf A+\mathbf A\cdot\nabla f\\

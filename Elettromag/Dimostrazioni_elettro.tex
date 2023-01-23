@@ -13,6 +13,12 @@
 
 \begin{document}
 
+
+\title{Appunti di Elettromagnetismo (Basato su Ragusa)}
+\author{Stefano Pilosio}
+
+\maketitle
+
 \section{Funzione $\delta(x)$ e Sorgente Puntiforme}
 
 \subsection{Caratteristiche $\delta(x)$}
@@ -366,6 +372,162 @@ Il contributo del campo magnetico è quindi perpendicolare al piano xy. Ora vogl
 \end{gather*}
 
 Integrando da $0 \to \pi$ ho ottenuto il risultato cercato.
+
+\section{Relatività}
+
+Supponiamo una carica che inizi a muoversi a $t=0$, con velocità uniforme $\bm b$, ho delle variazioni del campo elettrico dovute solo al fatto che adesso la carica è in moto. Queste variazioni \emph{non possono essere percepite istantaneamente in tutto lo spazio}. La perturbazione indotta deve viaggiare con \emph{la velocità della luce} $c$.
+Quindi al tempo $t$ i punti nello spazio a distanza superiore a  $R=ct$, non possono sapere che la carica si sia messa in moto, quelli a distanza inferiore invece vedono la carica in moto. Ho due campi elettrici separati da una zona di transizione, il cui spessore dipende dal tempo che la particella ha impiegato a passare dallo stati di riposo al moto rettilineo uniforme.
+Nella regione di transizione passiamo da un campo radiale  a un campo perpendicolare al raggio. Questo è analogo se la carica si arresta.
+
+Si può verificare partendo dalla geometria nel caso della carica che si ferma che il raccordo delle linee di campo segue la seguente legge:
+\begin{equation*}
+    \tan \phi_0 = \gamma \tan \theta_0
+\end{equation*}
+
+\subsection{quadrivettore}
+
+Nel passaggio da un sistema di riferimento ad un altro la posizione e il tempo di un evento si trasformano in una maniera non banale:
+\begin{itemize}
+    \item Lo spazio e il Tempo non sono quantità indipendenti
+    \item Sono le componenti del quadrivettore posizione $(ct,x,y,z)$
+    \item Nuova notazione: cambio nome alle coordinate spaziali $(x,y,z) \to (x^1, x^2, x^3)$
+    \item introduco una coordinata temporale: $x^0 = ct$
+    \item introduco $\beta= \frac{v}{c}$
+    \item introduco $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$
+\end{itemize}
+
+A questo punto scrivo le trasformazioni di Lorentz come:
+\begin{equation}
+    \begin{cases}
+        x' = \gamma (x - \beta ct)\\
+        y' = y\\
+        z' = z\\
+        ct' = \gamma(ct - \beta x)
+    \end{cases}
+\end{equation}
+
+O in forma matriciale:
+\begin{equation}
+    \begin{pmatrix}
+        x'^0 \\ x'^1\\x'^2\\x'^3
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \gamma & -\gamma \beta & 0 & 0 \\
+        - \gamma \beta & \gamma & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+        x^0 \\ x^1\\x^2\\x^3
+    \end{pmatrix}
+\end{equation}
+
+Per costruzione questa lasciata invariata la quantità detta \emph{invariante relativistico}
+\begin{equation}
+    (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2 
+\end{equation}
+
+Se si applica questa operazione alle quantità trasformate si ottiene che la condizione di uguaglianza si ha se:
+\begin{equation}
+    \gamma^2 (1 - \beta^2) = 1
+\end{equation}
+
+Questo è facile da verificare, inoltre si nota che questo è il determinante della matrice della trasformazione di Lorentz.
+
+Quelle in precedenza definite sono le componenti controvarianti del quadrivettore posizione, queste hanno indice alto.
+
+Posso definire anche le componenti covarianti, queste si differenziano per l'indice basso, e per la parte spaziale con segno invertito:
+\begin{equation}
+    x_\mu = (ct , -x,-y,-z)
+\end{equation}
+
+Inoltre per calcolare l'invariante posso definire il modulo quadrato el quadrivettore come:
+\begin{equation}
+    x \cdot x = x^\mu x_\mu
+\end{equation}
+
+\section{Fem Indotta}
+
+
+Spiega la terza equazione di Maxwell, ricavata da Micheal Faraday nel 1830 in tre diversi esperimenti: 
+\begin{equation}
+    \mathcal{E} = -\frac{d \varPhi}{dt}
+\end{equation}
+
+Caratteristiche degli esperimenti:
+\begin{itemize}
+    \item Campo magnetico fisso, spira che si muove
+    \item Campo magnetico che si muove, spira ferma (Uguale al primo, ma rispetto a un altro sistema di riferimento)
+    \item Campo magnetico variabile nel tempo
+\end{itemize}
+
+Presa una curva chiusa e stazionaria $\mathcal{C}$ in un sistema inerziale $\mathcal{S}$. La curva delimita una superficie $\mathcal{A}$. E' presente un campo magnetico dipendente dal tempo.
+
+Dalla legge di Faraday si ottiene:
+\begin{gather*}
+    \oint_\mathcal{C} \bm E \cdot d\bm l = - \frac{d \varPhi}{dt} = - \frac{d}{dt} \int_A \bm B \cdot d\bm a\\
+    text{Uso il teorema di Stokes}\\
+    \int_A (\curl \bm E)\cdot d\bm a = - \frac{d}{dt} \int_A \bm B \cdot d\bm a\\
+    \text{sia A che C sono stazionarie}\\
+    \int_A (\curl \bm E)\cdot d\bm a = -  \int_A \frac{d\bm B}{dt} \cdot d\bm a\\
+    \text{La curva è arbitraria}\\
+    \curl \bm E = - pdv{\bm B}{t}
+\end{gather*}
+
+Ho ottenuto la terza equazione di MAxwell per il terzo caso.
+
+\subsubsection*{Conseguenze}
+
+Valgono sempre la terza e la seconda equazione di maxwell, dalla seconda si deriva che per $\bm B$ posso definire un potenziale vettore $\bm A$, tale che $\bm B = \curl \bm A$.
+
+Se si inserisce questa relazione nella terza equazione di Maxwell si ottiene:
+\begin{equation}
+    \curl \bm E = - \pdv{\curl \bm A}{t} = -\curl \pdv{\bm A}{t}\implies \curl \left(\bm E + \pdv{\bm A}{t}\right)= 0
+\end{equation}
+
+Quindi ho trovato una combinazione di campi a rotore nullo, questo vuol dire che è la combinazione è il gradiente di un campo scalare:
+\begin{equation}
+    E + \pdv{\bm A}{t} = - \nabla \phi
+\end{equation}
+
+Da cui trovo l'espressione corretta per il campo elettrico:
+\begin{equation}
+    \bm E = - \nabla \phi - \pdv{\bm A}{t}
+\end{equation}
+
+\subsubsection*{Auto Induttanza}
+
+Se considera una spira percorsa da corrente $I$, la spira genera un campo magnetico $\bm B$. Sfrutto la legge di Biot-Savart:
+\begin{equation*}
+    \bm B(\bm r) = \frac{\mu_0}{4\pi} I \oint_{\mathcal{C}} \frac{d\bm l_1 \times (\bm r - \bm r_1)}{\left|\bm r - \bm r_1\right|^3}
+\end{equation*}
+
+Il campo magnetico dipende linearmente dalla corrente, a questo punto calcolo il flusso del campo magnetico inserendo l'equazione di Biot-Savart, di solito è una cosa difficile da calcolare come integrale, tuttavia la cosa importante è che questo è ancora proporzionale alla corrente, quindi posso riscriverlo come:
+\begin{equation}
+    \varPhi = LI
+\end{equation}
+
+Da cui ricavo che L è:
+\begin{equation}
+    L = \frac{\mu_0}{4\pi} \int \left[\frac{d \bm l_1 \times (\bm r - \bm r')}{|\bm r - \bm r_1|^3}\right] \cdot d\bm a
+\end{equation}
+
+Questa forma si può ottenere in una formula più semplice a partire dalla definizione di flusso e dal potenziale vettore:
+\begin{equation*}
+    \varPhi = \int_S \bm B \cdot d \bm a = \int_S \curl \bm A \cdot d \bm a = \oint_{\mathcal{C}} \bm A \cdot d \bm l
+\end{equation*}
+
+Sfruttando l'espressione per il potenziale vettore:
+
+\begin{equation}
+    \bm A (\bm r) = \frac{\mu_0}{4\pi} I \oint_{\mathcal{C}} \frac{d \bm l'}{|\bm r - \bm r'|}
+\end{equation}
+
+Questa introdotta nella definizione di flusso ottengo che L è:
+\begin{equation}
+    L = \frac{\mu_0}{4\pi} \oint_{\mathcal{C}}\oint_{\mathcal{C}} \frac{d\bm l\cdot d\bm l}{|\bm r - \bm r'|}
+\end{equation}
 
 \section{Onde Elettromagnetiche}
 

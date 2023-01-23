@@ -26,7 +26,7 @@
 - [ ] Capitolo 24
 - [ ] Capitolo 25
 - [ ] Capitolo 26
-- [ ] Capitolo 27
+- [x] Capitolo 27, fino a pagina 17 sono arrivato
 - [ ] Capitolo 28
 - [ ] Capitolo 29
 - [ ] Capitolo 30

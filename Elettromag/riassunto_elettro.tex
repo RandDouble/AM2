@@ -46,7 +46,7 @@ Il contorno è la superficie di separazione da un mezzo all'altro.
     \toprule
     & \text{mezzo lineare} & \sigma_f = 0\quad K_f = 0\\
     \midrule
-    D_{1\perp} - D_{2\perp} = \sigma_f & \epsilon_1 E_{1\perp} - \epsilon_2 E_{2\perp} & \epsilon_1 E_{1\perp} = \epsilon_2 E_{2\perp}\\
+    D_{1\perp} - D_{2\perp} = \sigma_f & \varepsilon_1 E_{1\perp} - \varepsilon_2 E_{2\perp} & \varepsilon_1 E_{1\perp} = \varepsilon_2 E_{2\perp}\\
     \bm E_{1\parallel} = \bm E_{2\parallel} & \bm E_{1\parallel} = \bm E_{2\parallel} & \bm E_{1\parallel} = \bm E_{2\parallel} \\
     \bm H_{1\parallel} - \bm H_{2\parallel} = \bm K_f \times \va n  & \frac{1}{\mu_1}\bm B_{1\parallel} - \frac{1}{\mu_2}\bm B_{2\parallel} = \bm K_f \times \va n & \frac{1}{\mu_1}\bm B_{1\parallel} = \frac{1}{\mu_2}\bm B_{2\parallel} \\
     B_{1\perp} = B_{2\perp} & B_{1\perp} = B_{2\perp} & B_{1\perp} = B_{2\perp} \\
@@ -61,9 +61,9 @@ Dove $K_f$ è una densità di corrente superficiale, mentre $\sigma_f$ è una de
 \subsection{Campi}
 
 \begin{gather}
-    \va D = \epsilon_0 \va E + \va P\\
-    \va P = \chi\epsilon_0 \va E \\
-    \va D = \epsilon_0 \epsilon_r \va E \quad \text{Nei materiali isotropi, omogenei e lineari}\\
+    \va D = \varepsilon_0 \va E + \va P\\
+    \va P = \chi\varepsilon_0 \va E \\
+    \va D = \varepsilon_0 \varepsilon_r \va E \quad \text{Nei materiali isotropi, omogenei e lineari}\\
     \va H = \va B/\mu_0 - \va M
 \end{gather}
 
@@ -75,7 +75,7 @@ Dove $K_f$ è una densità di corrente superficiale, mentre $\sigma_f$ è una de
     \div {\va D} = \rho_{free} &
     \va D \cdot  \vu n = \sigma_{free}\\
     \curl {\va M} = \va {J_{Amp, V}} &
-    \va M \cross \vu n = \va {J_{Amp, S}}
+    \va M \times \vu n = \va {J_{Amp, S}}
 \end{array}[cc]
 \]
 
@@ -93,7 +93,7 @@ Dove $K_f$ è una densità di corrente superficiale, mentre $\sigma_f$ è una de
 \subsubsection*{Legge di Coulomb}
 
 \begin{equation}
-    \bm F_{12} = \frac{1}{4\pi\epsilon_0}\frac{q_1 q_2}{|r_1 - r_2|^3}(\bm r_1 - \bm r_2)
+    \bm F_{12} = \frac{1}{4\pi\varepsilon_0}\frac{q_1 q_2}{|r_1 - r_2|^3}(\bm r_1 - \bm r_2)
 \end{equation}
 
 La forza di Coulomb è lineare, vale pertanto il \emph{Principio di Sovrapposizione}, quindi per trovare la forza su una carica devo sovrapporre gli effetti delle altre cariche agenti.
@@ -114,7 +114,7 @@ La forza di Coulomb è lineare, vale pertanto il \emph{Principio di Sovrapposizi
 \subsubsection*{Definizione Generale di Potenziale}
 
 \begin{equation}
-    \phi_p(\bm r) = \frac{1}{4\pi\epsilon_0}\int_{V}\frac{\rho(\bm r') d^3\bm r'}{\left|\bm r - \bm r'\right|}
+    \phi_p(\bm r) = \frac{1}{4\pi\varepsilon_0}\int_{V}\frac{\rho(\bm r') d^3\bm r'}{\left|\bm r - \bm r'\right|}
 \end{equation}
 
 
@@ -123,10 +123,10 @@ La forza di Coulomb è lineare, vale pertanto il \emph{Principio di Sovrapposizi
 Si ottiene combinando la definizone di campo elettrico mediante il potenziale e la I equazione di Maxwell per il campo elettrico:
 
 \begin{gather*}
-    \div E = \frac{\rho}{\epsilon_0}\\
+    \div E = \frac{\rho}{\varepsilon_0}\\
     E = - \grad \phi\\
-    - \div \grad \phi = \frac{\rho}{\epsilon_0}\\
-    \laplacian \phi = -\frac{\rho}{\epsilon_0} \quad \text{Equazione di Poisson}
+    - \div \grad \phi = \frac{\rho}{\varepsilon_0}\\
+    \laplacian \phi = -\frac{\rho}{\varepsilon_0} \quad \text{Equazione di Poisson}
 \end{gather*}
 
 \subsubsection*{Equazione di Poisson}
@@ -143,13 +143,13 @@ La soluzione dell'equazione di Laplace è unica ed è data dalla somma della sol
 
 \begin{equation}
     C = \frac{q}{V} = 
-    \frac{\oint_\Sigma \sigma (x',y',z') d\Sigma}{\frac{1}{4\pi\epsilon_0} \oint_\Sigma \frac{\sigma(x',y',z')}{\left| \bm{r} - \bm{r'} \right|}} d\Sigma
+    \frac{\oint_\Sigma \sigma (x',y',z') d\Sigma}{\frac{1}{4\pi\varepsilon_0} \oint_\Sigma \frac{\sigma(x',y',z')}{\left| \bm{r} - \bm{r'} \right|}} d\Sigma
 \end{equation}
 
 \subsubsection*{Condensatore a Facce Piane Parallele}
 La Capacità dipende solo dalla geometria del sistema
 \begin{equation*}
-    C = \epsilon_0 \frac{A}{d}
+    C = \varepsilon_0 \frac{A}{d}
 \end{equation*}
 
 
@@ -181,15 +181,15 @@ La Capacità dipende solo dalla geometria del sistema
 \subsection{Onde}
 
 \begin{align}
-    \va S & = \frac{\bm E \cross \bm B}{\mu_0 \mu_r}\\
-    I & = <S> = \frac{1}{2}\epsilon v E^2_0
+    \va S & = \frac{\bm E \times \bm B}{\mu_0 \mu_r}\\
+    I & = <S> = \frac{1}{2}\varepsilon v E^2_0
 \end{align}
 
 Formula per assorbimento energia:
 
 \begin{align}
-    \mathcal E =&  \epsilon_r \epsilon_0 E_0^2\quad &\text {materiali assorbenti}\\
-    \mathcal E =& 2\epsilon_r \epsilon_0 E_0^2\quad &\text {materiali riflettenti}
+    \mathcal E =&  \varepsilon_r \varepsilon_0 E_0^2\quad &\text {materiali assorbenti}\\
+    \mathcal E =& 2\varepsilon_r \varepsilon_0 E_0^2\quad &\text {materiali riflettenti}
 \end{align}
 
 \pagebreak
@@ -206,9 +206,9 @@ Formula per assorbimento energia:
     % Cartesiane
     \displaystyle \pdv{f}{x} \va x + \pdv{f}{y} \va y + \pdv{f}{z} \va z &
     % Cilindriche
-    \displaystyle \pdv{f}{\rho}\va \rho + \frac{1}{\rho}\pdv{f}{\phi}\va \phi + \pdv{f}{z} \va z &
+    \displaystyle \pdv{f}{\rho} \va {\bm \rho} + \frac{1}{\rho}\pdv{f}{\phi}\va {\bm\phi} + \pdv{f}{z} \va z &
     % Sferiche
-    \displaystyle \pdv{f}{r} \va r + \frac{1}{r} \pdv{f}{\theta} \va \theta + \frac{1}{r\sin{\theta}} \pdv{f}{\phi} \va \phi\\ 
+    \displaystyle \pdv{f}{r} \va r + \frac{1}{r} \pdv{f}{\theta} \va {\bm\theta} + \frac{1}{r\sin{\theta}} \pdv{f}{\phi} \va{\bm \phi}\\ 
 \midrule
 % Formule per Divergenza
 \displaystyle \div{\bm{F}} &
@@ -232,19 +232,19 @@ Formula per assorbimento energia:
     % Cilindriche
 \begin{matrix}
     \displaystyle \bigg (\frac{1 }{ \rho}\pdv{ A_z }{ \phi}
-    - {\partial A_\phi } \pdv{  z} \bigg ) \boldsymbol{\hat \rho}  \\
-    \displaystyle \bigg ({\partial A_\rho }{ \partial z} - {\partial A_z }{ \partial \rho} \bigg) \boldsymbol{\hat \phi} \\
-    \displaystyle{1 }{ \rho}\bigg ({\partial ( \rho A_\phi ) }{ \partial \rho}
-    - {\partial A_\rho }{ \partial \phi} \bigg ) \boldsymbol{\hat z}
+    - \pdv{A_\phi }{  z} \bigg ) \boldsymbol{\hat \rho}  \\
+    \displaystyle \bigg (\pdv{A_\rho }{z} - \pdv{A_z }{\rho} \bigg) \boldsymbol{\hat \phi} \\
+    \displaystyle \frac{1 }{ \rho}\bigg (\pdv{( \rho A_\phi ) }{\rho}
+    - \pdv{A_\rho}{\phi} \bigg ) \boldsymbol{\hat z}
 \end{matrix} &
     % Sferiche
 \begin{matrix}
-    \displaystyle \frac{1 }{ r\sin\theta} \bigg (\frac{\partial }{ \partial \theta} ( A_\phi\sin\theta )
+    \displaystyle \frac{1}{ r\sin\theta} \bigg (\frac{\partial }{ \partial \theta} ( A_\phi\sin\theta )
     - \frac{\partial A_\theta }{ \partial \phi} \bigg ) \boldsymbol{\hat r} \\
-    \displaystyle{1 }{ r} \bigg ({1 }{ \sin\theta}{\partial A_r }{ \partial \phi}
-    - \frac{\partial }{ \partial r} ( r A_\phi ) \bigg ) \boldsymbol{\hat \theta}\\
+    \displaystyle \frac{1}{ r} \bigg (\frac{1 }{ \sin\theta}\pdv{A_r }{\phi}
+    - \pdv{( r A_\phi )}{r}  \bigg ) \boldsymbol{\hat \theta}\\
     \displaystyle \frac{1 }{ r}\bigg (\frac{\partial }{ \partial r} ( r A_\theta )
-    - \frac{\partial A_r }{ \partial \theta} \bigg) \boldsymbol{\hat \phi}
+    - \pdv{ A_r }{\theta} \bigg) \boldsymbol{\hat \phi}
 \end{matrix}
 \\
 \midrule
@@ -262,7 +262,7 @@ Formula per assorbimento energia:
     + \frac{1 }{ r^2\sin\theta}\frac{\partial }{ \partial \theta} \bigg(\sin\theta \frac{\partial f }{ \partial \theta} \bigg)
     + \frac{1 }{ r^2\sin^2\theta}\frac{\partial^2 f }{ \partial \phi^2}\\
 \midrule
-    % Formule per laplaciano Vettoriale
+% Formule per laplaciano Vettoriale
 \nabla^2 \mathbf{A} &
     % Cartesiano
     \nabla^2 A_x \mathbf{\hat x} + \nabla^2 A_y \mathbf{\hat y} + \nabla^2 A_z \mathbf{\hat z} & 

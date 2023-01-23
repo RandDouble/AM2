@@ -35,8 +35,9 @@
 - [ ] Capitolo 33
 - [ ] Capitolo 34
 - [ ] Capitolo 35
-- [ ] Capitolo 36
+- [x] Capitolo 36, valuta se aggiungere polarizzazione
 - [ ] Capitolo 37
 - [ ] Capitolo 38
 - [ ] Capitolo 39
-- [ ] Capitolo 40
+- [ ] Capitolo 40 (parte I)
+- [x] Capitolo 40 (parte II), tutto opzionale

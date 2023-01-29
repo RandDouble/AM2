@@ -19,7 +19,8 @@
 - [ ] Capitolo 17
 - [ ] Capitolo 18
 - [ ] Capitolo 19
-- [ ] Capitolo 20
+- [x] Capitolo 20
+- [x] Capitolo 20-bis
 - [ ] Capitolo 21
 - [ ] Capitolo 22
 - [ ] Capitolo 23
@@ -29,7 +30,7 @@
 - [x] Capitolo 27, fino a pagina 17 sono arrivato
 - [ ] Capitolo 28
 - [ ] Capitolo 29
-- [ ] Capitolo 30
+- [x] Capitolo 30
 - [ ] Capitolo 31
 - [ ] Capitolo 32
 - [ ] Capitolo 33

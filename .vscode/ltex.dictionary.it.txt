@@ -1,0 +1,14 @@
+Pilosio
+Poisson
+Lorentz
+Fem
+Maxwell
+Faraday
+Laplace
+xy
+controvarianti
+Helmoltz
+fem
+Poynting
+Savart
+Biot

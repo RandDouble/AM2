@@ -23,7 +23,7 @@
     \displaystyle \div{\va D} = \rho_{free}             & \displaystyle \varPhi(D)   = \oint_S \va D \cdot \, d\Sigma= Q_{free}\\
     \displaystyle \div{\va B} = 0                       & \displaystyle \varPhi(B)   = \oint_S \va B \cdot \, d\Sigma= 0\\
     \displaystyle \curl{\va E}= -\pdv{\va B}{t}         & \displaystyle \varGamma(E) = \oint_\gamma \va E \cdot \,dl = -\dv{\varPhi(\va B)}{t}\\
-    \displaystyle \curl{\va H}= \va J +  \pdv{\va D}{t} & \displaystyle \varGamma(H) = \oint_\gamma \va H \cdot \,dl = \int_S \va J \cdot \,dS + \dv{\varPhi(\va D)}{t}\\
+    \displaystyle \curl{\va H}= \va J +  \pdv{\va D}{t} & \displaystyle \varGamma(H) = \oint_\gamma \va H \cdot \,dl = \int_S \va J \cdot \,dS + \dv{\varPhi( \va D)}{t}\\
     \bottomrule
 \end{array}    
 \]
@@ -143,7 +143,7 @@ La soluzione dell'equazione di Laplace è unica ed è data dalla somma della sol
 
 \begin{equation}
     C = \frac{q}{V} = 
-    \frac{\oint_\Sigma \sigma (x',y',z') d\Sigma}{\frac{1}{4\pi\varepsilon_0} \oint_\Sigma \frac{\sigma(x',y',z')}{\left| \bm{r} - \bm{r'} \right|}} d\Sigma
+    \frac{\displaystyle \oint_\Sigma \sigma (x',y',z') d\Sigma}{\displaystyle \frac{1}{4\pi\varepsilon_0} \oint_\Sigma \frac{\sigma(x',y',z')}{\left| \bm{r} - \bm{r'} \right|}} d\Sigma
 \end{equation}
 
 \subsubsection*{Condensatore a Facce Piane Parallele}
@@ -153,11 +153,18 @@ La Capacità dipende solo dalla geometria del sistema
 \end{equation*}
 
 
+\subsubsection*{Legge di Ampere}
+Forza tra due fili paralleli di lunghezza $l$ percorsi da corrente $i$, a distanza $a$:
+\begin{equation*}
+    F = \mu_0  \frac{i_1i_2}{2\pi a}l
+\end{equation*}
+
+
 \subsubsection*{Legge di Biot Savart} 
 (Campo Magnetico $\bm B$  generato da un circuito $\mathcal{C}$ percorso da una corrente $i$):
 
 \begin{equation}
-    \frac{\mu_0 i}{4 \pi} \oint_{\mathcal{C}} \frac {dl \times r}{r^3}
+    \frac{\mu_0 i}{4 \pi} \oint_{\mathcal{C}} \frac {d\bm l \times \bm r}{r^3}
 \end{equation}
 
 \subsubsection*{Forza di Lorentz}
@@ -167,26 +174,28 @@ La Capacità dipende solo dalla geometria del sistema
 \end{equation}
 
 \subsubsection*{Campi Magnetici Famosi}
-
-Filo infinito:
-\begin{equation}
-    \bm B_0(\bm r) = \frac{\mu_0 I}{2\pi r} \bm \theta
-\end{equation}
-
-Solenoide rettilineo lungo:
-\begin{equation}
-    \bm B_0 (\bm r) = \frac{\mu_0NI}{l} \bm z= \mu_0 nI \bm z
-\end{equation}
-
-Asse di spira circolare:
-\begin{equation}
-    \bm B_0 (\bm r) = \frac{\mu_0}{2\pi} \frac{I \bm S}{(R^2 + z^2)^{3/2}}
-\end{equation}
-
-Nastro di corrente:
-\begin{equation}
-    \bm B_0(\bm x) = \bm n \frac{\mu_0 I}{2\pi b} \ln\left(\frac{l + b}{l}\right)
-\end{equation}
+\begin{itemize}
+    
+    \item Filo infinito:
+    \begin{equation}
+        \bm B_0(\bm r) = \frac{\mu_0 I}{2\pi r} \bm \theta
+    \end{equation}
+    
+    \item Solenoide rettilineo lungo:
+    \begin{equation}
+        \bm B_0 (\bm r) = \frac{\mu_0NI}{l} \bm z= \mu_0 nI \bm z
+    \end{equation}
+    
+    \item Asse di spira circolare:
+    \begin{equation}
+        \bm B_0 (\bm r) = \frac{\mu_0}{2\pi} \frac{I \bm S}{(R^2 + z^2)^{3/2}}
+    \end{equation}
+    
+    \item Nastro di corrente:
+    \begin{equation}
+        \bm B_0(\bm x) = \bm n \frac{\mu_0 I}{2\pi b} \ln\left(\frac{l + b}{l}\right)
+    \end{equation}
+\end{itemize}
 
 \subsubsection*{Autoinduttanza}
 \begin{equation}

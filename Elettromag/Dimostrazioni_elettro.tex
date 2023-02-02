@@ -81,6 +81,66 @@ Il potenziale con questa forma soddisfa l'equazione di Poisson, basta buttarlo d
     \phi_p(\bm r) = \frac{1}{4\pi\varepsilon_0}\int_{V}\frac{\rho(\bm r') d^3\bm r'}{\left|\bm r - \bm r'\right|}
 \end{equation}
 
+\section{Energia Campo Elettrico (Slide 7)}
+
+Per derivare l'energia del campo magnetico nel caso generale, parto dall'energia di un sistema di $N$ cariche:
+
+\begin{equation*}
+    U = \frac{1}{2} \sum_{i \neq j = 1}^{N} \frac{q_i q_j}{4\pi\varepsilon_0}\frac{1}{r_{ij}} \to U = \frac{1}{2} \int_{\mathcal{V}} \int_{\mathcal{V}} \frac{1}{4\pi\varepsilon}\frac{\rho(\bm r_1)\rho(\bm r_2)}{|\bm r_1 - \bm r_2|} d^3\bm r_1 d^3\bm r_2
+\end{equation*}
+
+Se si ricorda il potenziale generato da una distribuzione di carica $\rho$:
+\begin{equation*}
+    \varphi(\bm r_2) = \frac{1}{4\pi\varepsilon_0} \int_{V} \frac{\rho(\bm r_1)}{|\bm r_1 -\bm r_2|} d^3\bm r_1
+\end{equation*} 
+
+E la inserisco in U:
+\begin{equation*}
+    U = \frac{1}{2} \int_V \varphi(\bm r_2)\rho(\bm r_2) d^3\bm r_2
+\end{equation*}
+
+Generalizzando:
+\begin{equation*}
+    U = \frac{1}{2} \int_V \varphi(\bm r)\rho(\bm r) d^3\bm r
+\end{equation*}
+
+Usando la legge di Gauss in forma differenziale:
+\begin{gather*}
+    \div \bm E = \frac{\rho}{\varepsilon_0}\\
+    \rho(\bm r) = \varepsilon_0 \div \bm E\\
+    U = \frac{\varepsilon_0}{2} \int_V \varphi(\bm r)  \div \bm E d^3\bm r
+\end{gather*}
+
+Si sfrutta una proprietà della divergenza:
+\begin{equation}
+    \div (f \bm A) = f\div \bm A + \bm A \cdot \nabla f \to \varphi \div \bm E = \div (\varphi \bm E) - \bm E \cdot \nabla \varphi
+\end{equation}
+
+Inserita nell'integrale:
+\begin{equation*}
+    U = \frac{\varepsilon_0}{2} \int_V \div (\varphi \bm E) - \bm E \cdot \nabla \varphi d^3\bm r
+\end{equation*}
+
+Per i campi che si annullano velocemente all'infinito il primo integrale è nullo, si dimostra usando il teorema della divergenza:
+
+\begin{equation*}
+    \int_V \div (\varphi \bm E) dV = \oint_S \varphi \bm E \cdot d \bm a
+\end{equation*}
+
+All'infinito l'elemento di superficie tende a $da \to r^2d\Omega$.
+Se quindi l'integranda tende più velocemente  a zero di $r^2$ l'integrale è nullo.
+
+Quindi l'energia diventa:
+\begin{equation*}
+    U = - \frac{\varepsilon_0}{2} \int_{V} \bm E \cdot \nabla \varphi d^3\bm r
+\end{equation*}
+
+Ma $\bm E = - \nabla \varphi$, quindi ottengo:
+
+\begin{equation}
+    U = \frac{\varepsilon_0}{2} \int_V \bm E \cdot \bm E d^3 \bm r = \int_V u dV \to u = \frac{\varepsilon_0}{2}E^2
+\end{equation}
+
 \section{Condensatori}
 
 I condensatori sono dispositivi che possono immagazzinare energia sotto forma di un campo elettrico.
@@ -106,7 +166,7 @@ Il lavoro compiuto è uguale all'energia immagazzinata ($U  = W$), questo lavoro
 \end{gather*}
 
 Nel condensatore trascurando gli effetti di bordo ho un campo elettrico uniforme diretto dall'armatura a potenziale maggiore all'armatura a potenziale minore.
-Il modulo di $\bm E$ è: $E \frac{\sigma}{\varepsilon_0}$, la densità di energia $\rho_E = \frac{1}{2}\frac{\sigma^2}{\varepsilon_0}$, per ottenere l'energia basta fare l'integrale sul volume del condensatore.
+Il modulo di $\bm E$ è: $E = \frac{\sigma}{\varepsilon_0}$, la densità di energia $\rho_E = \frac{1}{2}\frac{\sigma^2}{\varepsilon_0}$, per ottenere l'energia basta fare l'integrale sul volume del condensatore.
 
 \subsection{Forza fra le armature di un condensatore}
 
@@ -163,7 +223,7 @@ Sistema di due cariche di segno opposto $-q$ e $+q$ poste a distanza $d$.
 
 Si parte calcolando il potenziale:
 \begin{equation*}
-    \psi = \frac{q}{4\pi\varepsilon_0} \frac{1}{\left|\bm r - \bm r_+\right|} - frac{q}{4\pi\varepsilon_0} \frac{1}{\left|\bm r - \bm r_-\right|}
+    \psi = \frac{q}{4\pi\varepsilon_0} \frac{1}{\left|\bm r - \bm r_+\right|} - \frac{q}{4\pi\varepsilon_0} \frac{1}{\left|\bm r - \bm r_-\right|}
 \end{equation*}
 
 Questa formula vale a qualunque distanza, ma a noi interessa a distanze maggiori rispetto a quella dell'atomo ($r \gg d$). Mi serve una formula approssimata.
@@ -278,6 +338,51 @@ Da quest'ultima considerazione si ottiene:
 
 In questo caso si è assunta polarizzazione uniforme e diretta lungo l'asse z.
 
+\subsection{Energia elettrostatica della materia polarizzata}
+
+Ho un sistema di cariche libere definito da una densità di carica libera $\rho_f$, ho un dielettrico lineare, omogeneo, isotropo polarizzato, questo sistema genera un potenziale $\varphi(\bm r)$.
+
+Parto da un sistema scarico, quindi $\rho_f = 0$, quindi trasporto una carica infinitesima $d\rho_f$ dall'infinito al sistema. Dispongo in modo che la densità di carica sia una frazione $\alpha \in (0, 1)$ di quella finale ($\rho_\alpha (\bm r) = \alpha \rho_f (\bm r)$). Dato che il dielettrico è lineare anche il potenziale sarà una frazione di quello finale. Perciò anche le cariche di polarizzazione saranno una frazione di quelle finali, quindi anche i campi $\bm P$ e $\bm D$ saranno una frazione $\alpha$ di quelli finali.
+
+Si può dimostrare che il lavoro fatto per trasportare la carica è:
+\begin{equation*}
+    dW 0 \int[\varphi (\bm r) d\rho_f(\bm r)] d^3\bm r
+\end{equation*}
+Qui si sottintende che il potenziale è generato anche dal dielettrico, il dielettrico è lineare e quindi il lavoro contiene anche il lavoro necessario a polarizzare il dielettrico.
+Elaborando tutto il discorso si ottene:
+\begin{equation*}
+    dW = \int [\alpha\varepsilon(\bm r)\rho_f (\bm r)d\alpha]d^3\bm r = \alpha d\alpha \int \varepsilon(\bm r) \rho_f(\bm r) d^3 \bm r
+\end{equation*}
+
+Integrando su $\alpha$, ottengo il lavoro:
+\begin{equation}
+    W = \frac{1}{2} \int \varepsilon(\bm r) \rho_f(\bm r) d^3 \bm r
+\end{equation}
+
+La differenza rispetto all'energia potenziale presente nella densità di energia è che lì era presente tutta la carica in gioco, mentre qui solo quella libera.
+
+Adesso usiamo la legge di Gauss per lo spostamento elettrico $\div \bm D = \rho_f$:
+
+\begin{equation*}
+    W = \frac{1}{2} \int \varepsilon(\bm r) \div \bm D d^3 \bm r
+\end{equation*}
+
+Sfrutto la stessa relazione usata per il lavoro nel caso del vuoto e ottengo:
+
+\begin{equation*}
+    W = \frac{1}{2}\int \div (\varphi \bm D) - \bm D \cdot \nabla \varphi \, d^3\bm r
+\end{equation*}
+
+Il primo integrale è nullo per campi che si annullano velocemente all'infinito, mi rimane il secondo integrale, sfrutto la relazione tra potenziale e campo elettrico e ottengo:
+
+\begin{gather}
+    W = \frac{1}{2} \int \bm D \cdot \bm E \, d^3\bm r\\
+    W = \int_V u dV\\
+    u = \frac{1}{2} \bm D \cdot \bm E
+\end{gather}
+
+Quest'ultimo lavoro include anche quello necessario per polarizzare il dielettrico, a differenza del precedente $u$ che conteneva solo il lavoro fatto dalle cariche.
+
 \section{Forza di Lorentz}
 
 La forza totale agente su una carica è:
@@ -318,6 +423,27 @@ Se sono immerso in un campo magnetico su ogni particella agisce la forza di Lore
 
 Ho trovato la forza totale agente su un circuito $C$.
 Posso fare il discorso precedenti con i plasmi oppure  con cariche in un fluido parlando della densità volumetrica di corrente e della forza volumetrica.
+
+\subsection{Conduttività}
+[\emph{In questo capitolo $\sigma$ identifica una conduttività}]
+Se il mezzo non è omogeneo, quindi non ha un'unica conduttività, in una condizione di stazionarietà è implicato che non ci sia una densità di carica nel materiale.
+\begin{equation*}
+    \pdv{\rho(\bm r , t)}{t} = 0 \implies \div{\bm J} = 0
+\end{equation*}
+
+Dato che $\bm J = \sigma \bm E$ ottengo:
+
+\begin{equation*}
+    \div \bm J  = \div \sigma \bm E = \frac{\sigma}{\varepsilon_r\varepsilon_0} \div \bm D \implies \div \bm D = 0 \implies \rho = 0
+\end{equation*}
+
+Se invece avessi che $\sigma$ variasse si potrebbe avere una densità di carica, quindi per esempio se considero due conduttori di conduttività diversa $\sigma_1 > \sigma_2$, in condizioni stazionarie dovrei avere che $\bm J$ sia lo stesso in entrambi i mezzi, se no avrei un accumulo di carica sull'interfaccia, quindi ho due campi elettrici differenti: $\bm E_1$ e $\bm E_2$, $\bm E_1 < \bm E_2$, quindi il campo è discontinuo sull'interfaccia, quindi sull'interfaccia c'è una densità di carica. (Ricorda le condizioni al contorno).
+
+\subsubsection*{Campo elettrico all'esterno del filo}
+
+All'esterno del filo percorso da corrente è presente un campo elettrico, siccome la divergenza della densità di corrente è nulla questa deve richiudersi, questo vuol dire che ho una forza elettromotrice, \emph{fem.}
+
+Uso come 
 
 \subsection{Legge di Biot-Savart}
 \subsubsection*{Sorgenti del campo magnetico}
@@ -633,7 +759,7 @@ Energia associata a campi elettrici:
 
 Energia associata a campi magnetici:
 \begin{equation*}
-    \frac{1}{2 \mu_0} \int B^2 dV
+    U_M = \frac{1}{2 \mu_0} \int B^2 dV
 \end{equation*}
 
 Queste valgono anche per campi elettromagnetici, faccio semplicemente la somma:

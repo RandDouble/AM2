@@ -12,3 +12,4 @@ fem
 Poynting
 Savart
 Biot
+integranda
